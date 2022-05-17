@@ -51,24 +51,40 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    bool isFrontGround()
+    {
+        bool re = false;
+        for (int i = 0; i < 4; i++)
+        {
+            re = Physics2D.Linecast(transform.position,
+                            transform.position + new Vector3(2 * transform.localScale.x, (-4.7f + 2.35f * i) * transform.localScale.y, 1),
+                            1 << LayerMask.NameToLayer("Ground"));
+            if (re)
+                return re;
+        }
+        return re;
+    }
+
     void movingControll()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
-        if (isGround)
+
+        if (horizontal != 0)
         {
-            if (horizontal != 0)
-            {
-                float scaleX = Math.Abs(transform.localScale.x);
-                if (horizontal < 0)
-                    transform.localScale = new Vector3(scaleX * -1.0f, transform.localScale.y, transform.localScale.z);
-                else
-                    transform.localScale = new Vector3(scaleX * 1.0f, transform.localScale.y, transform.localScale.z);
+            float scaleX = Math.Abs(transform.localScale.x);
+            if (horizontal < 0)
+                transform.localScale = new Vector3(scaleX * -1.0f, transform.localScale.y, transform.localScale.z);
+            else
+                transform.localScale = new Vector3(scaleX * 1.0f, transform.localScale.y, transform.localScale.z);
+            if (!isFrontGround())
                 rig.velocity = new Vector2(horizontal * speed, rig.velocity.y);
-            }
             else
                 rig.velocity = new Vector2(0, rig.velocity.y);
+                
         }
-
+        else
+            rig.velocity = new Vector2(0, rig.velocity.y);
+        
         isWalk = horizontal != 0;
     }
 
