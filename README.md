@@ -47,7 +47,7 @@ FCUGDC GameJam 1102
 ## Todo List
 分解圖
 - [x] Pekora
-- [x] Aqua
+- [x] BOSS
 - [x] 史萊姆
 - [x] 殭屍
 - [x] 骷弓
