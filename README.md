@@ -55,14 +55,14 @@ FCUGDC GameJam 1102
 
 素材&立繪
 - [x] 力量藥水、虛弱藥水
-- [ ] Pekora的子彈、Aqua的子彈、骷弓的子彈
+- [ ] Pekora的子彈、BOSS的子彈、骷弓的子彈
 - [x] 草裝飾、草地方塊、泥土方塊、沙子方塊(拼成路面的素材)
 - [ ] Ch1、Ch2背景
 - [ ] Ch3背景
 - [ ] Pekora立繪
 - [ ] Moona立繪
 - [ ] Miko立繪
-- [ ] Aqua立繪
+- [ ] BOSS立繪
 
 CG
 - [ ] 過關CG
