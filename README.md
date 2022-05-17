@@ -1,4 +1,4 @@
-# 兔田社長迫害中 Pekora_Syachou_Abused
+# 兔田社長迫害中 Pekora Syachou Abused
 FCUGDC GameJam 1102
  * 遊戲平台: PC
  * 遊戲人數: 1
