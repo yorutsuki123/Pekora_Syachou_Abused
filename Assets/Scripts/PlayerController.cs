@@ -7,18 +7,20 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float jumpspeed;
-    public GameObject[] groundChecker = new GameObject[3];
+    public float bound;
     [SerializeField] bool isGround;
     [SerializeField] bool isWalk;
     [SerializeField] bool isJump;
 
     Rigidbody2D rig;
+    BoxCollider2D bc;
     Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         rig = gameObject.GetComponent<Rigidbody2D>();
+        bc = gameObject.GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         isGround = false;
         isWalk = false;
@@ -41,11 +43,22 @@ public class PlayerController : MonoBehaviour
 
     void checkGround()
     {
+        float scalex = transform.localScale.x;
+        float scaley = transform.localScale.y;
+        float sizex = bc.size.x;
+        float sizey = bc.size.y;
+        float posx = transform.position.x + bc.offset.x * scalex;
+        float posy = transform.position.y + bc.offset.y * scaley;
+
+        float startx = posx - sizex / 2 * scalex;
+        float starty = posy - sizey / 2 * scaley;
         for (int i = 0; i < 3; i++)
         {
             isGround = Physics2D.Linecast(transform.position,
-                            groundChecker[i].transform.position,
+                            new Vector3(startx + (sizex / 2 * i) * scalex, starty - bound * scaley, 1),
                             1 << LayerMask.NameToLayer("Ground"));
+            Debug.DrawLine(transform.position,
+                            new Vector3(startx + (sizex / 2 * i) * scalex, starty - bound * scaley, 1));
             if (isGround)
                 break;
         }
@@ -53,12 +66,23 @@ public class PlayerController : MonoBehaviour
 
     bool isFrontGround()
     {
+        float scalex = transform.localScale.x;
+        float scaley = transform.localScale.y;
+        float sizex = bc.size.x;
+        float sizey = bc.size.y;
+        float posx = transform.position.x + bc.offset.x * scalex;
+        float posy = transform.position.y + bc.offset.y * scaley;
+
+        float startx = posx + sizex / 2 * scalex;
+        float starty = posy - sizey / 2 * scaley;
         bool re = false;
         for (int i = 0; i < 4; i++)
         {
             re = Physics2D.Linecast(transform.position,
-                            transform.position + new Vector3(2 * transform.localScale.x, (-4.7f + 2.35f * i) * transform.localScale.y, 1),
+                            new Vector3(startx + bound * scalex, starty + (sizey / 3 * i) * scaley, 1),
                             1 << LayerMask.NameToLayer("Ground"));
+            Debug.DrawLine(transform.position,
+                            new Vector3(startx + bound * scalex, starty + (sizey / 3 * i) * scaley, 1));
             if (re)
                 return re;
         }

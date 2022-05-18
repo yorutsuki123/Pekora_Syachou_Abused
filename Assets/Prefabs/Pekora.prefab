@@ -1,65 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1427718143511414948
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4416653009650887243}
-  m_Layer: 0
-  m_Name: groundChecker3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4416653009650887243
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427718143511414948}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6985, y: -5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3148030731344413871}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2843415840838160801
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4551395853867820948}
-  m_Layer: 0
-  m_Name: groundChecker1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4551395853867820948
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2843415840838160801}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.9785, y: -5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3148030731344413871}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3148030729589759584
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +334,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3148030730260837200}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1387.892}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1747.892}
 --- !u!1 &3148030729932309376
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +518,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3148030731078196624}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -301.76}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -301.761}
 --- !u!1 &3148030730003754754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,9 +1723,6 @@ Transform:
   - {fileID: 3148030729771913258}
   - {fileID: 3148030731238321327}
   - {fileID: 3148030730043054295}
-  - {fileID: 4551395853867820948}
-  - {fileID: 6316727786944477644}
-  - {fileID: 4416653009650887243}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2005,10 +1942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   jumpspeed: 12
-  groundChecker:
-  - {fileID: 2843415840838160801}
-  - {fileID: 7863436790995253540}
-  - {fileID: 1427718143511414948}
+  bound: 1
   isGround: 0
   isWalk: 0
   isJump: 0
@@ -2170,33 +2104,3 @@ Transform:
   m_Father: {fileID: 3148030731079935462}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.119}
---- !u!1 &7863436790995253540
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6316727786944477644}
-  m_Layer: 0
-  m_Name: groundChecker2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6316727786944477644
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7863436790995253540}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: -5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3148030731344413871}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
