@@ -52,13 +52,16 @@ public class PlayerController : MonoBehaviour
 
         float startx = posx - sizex / 2 * scalex;
         float starty = posy - sizey / 2 * scaley;
-        for (int i = 0; i < 3; i++)
+
+        int N = 3;
+
+        for (int i = 0; i < N; i++)
         {
             isGround = Physics2D.Linecast(transform.position,
-                            new Vector3(startx + (sizex / 2 * i) * scalex, starty - bound * scaley, 1),
+                            new Vector3(startx + (sizex / (N - 1) * i) * scalex, starty - bound * scaley, 1),
                             1 << LayerMask.NameToLayer("Ground"));
             Debug.DrawLine(transform.position,
-                            new Vector3(startx + (sizex / 2 * i) * scalex, starty - bound * scaley, 1));
+                            new Vector3(startx + (sizex / (N - 1) * i) * scalex, starty - bound * scaley, 1));
             if (isGround)
                 break;
         }
@@ -75,14 +78,17 @@ public class PlayerController : MonoBehaviour
 
         float startx = posx + sizex / 2 * scalex;
         float starty = posy - sizey / 2 * scaley;
+
+        int N = 5;
+
         bool re = false;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < N; i++)
         {
             re = Physics2D.Linecast(transform.position,
-                            new Vector3(startx + bound * scalex, starty + (sizey / 3 * i) * scaley, 1),
+                            new Vector3(startx + bound * scalex, starty + (sizey / (N - 1) * i) * scaley, 1),
                             1 << LayerMask.NameToLayer("Ground"));
             Debug.DrawLine(transform.position,
-                            new Vector3(startx + bound * scalex, starty + (sizey / 3 * i) * scaley, 1));
+                            new Vector3(startx + bound * scalex, starty + (sizey / (N - 1) * i) * scaley, 1));
             if (re)
                 return re;
         }
