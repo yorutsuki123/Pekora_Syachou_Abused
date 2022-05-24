@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf7c34a0dc4e6348bea04faa70406ee, type: 3}
+  m_Name: Creeper_Sprite_Library
+  m_EditorClassIdentifier: 
+  m_Labels:
+  - m_Name: Creeper
+    m_Hash: 20907262
+    m_CategoryList:
+    - m_Name: common
+      m_Hash: -437489583
+      m_Sprite: {fileID: 21300000, guid: 944ee9f1bebc918438f9ec67f76938db, type: 3}
+    - m_Name: bang
+      m_Hash: -774442159
+      m_Sprite: {fileID: 21300000, guid: ee22c7d7697b3b64b81cd3f089360778, type: 3}
