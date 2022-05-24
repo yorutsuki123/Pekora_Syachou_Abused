@@ -981,7 +981,7 @@ GameObject:
   - component: {fileID: 6343976681936596294}
   - component: {fileID: 6343976681936596295}
   m_Layer: 0
-  m_Name: Aqua_2D_component
+  m_Name: Aqua
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
