@@ -17,6 +17,7 @@ public abstract class CreatureController : MonoBehaviour
     [SerializeField] protected bool isJump;
     [SerializeField] protected bool isHurt;
     [SerializeField] protected bool isDonchan;
+    [SerializeField] protected bool isContiDonchan;
     [SerializeField] protected bool isAttacking;
     [SerializeField] protected float blockedTimer;
 
@@ -40,12 +41,17 @@ public abstract class CreatureController : MonoBehaviour
         {
             print("CG attack");
         }
+        print(type);
         if (type == "Hurt")
             isHurt = true;
         if (type == "Donchan")
+        {
             isDonchan = true;
+            isContiDonchan = true;
+        }
         hp -= damage;
-        blockedTimer = Time.time + block;
+        if (blockedTimer < Time.time + block)
+            blockedTimer = Time.time + block;
         if (hp <= 0)
         {
             Destroy(gameObject);
@@ -128,6 +134,10 @@ public abstract class CreatureController : MonoBehaviour
 
     protected virtual void movingControll(float horizontal)
     {
+        if (isBlocked())
+        {
+            return;
+        }
         if (horizontal != 0)
         {
             float scaleX = Math.Abs(transform.localScale.x);
@@ -149,6 +159,10 @@ public abstract class CreatureController : MonoBehaviour
 
     protected virtual void jumpingControll(float vertical)
     {
+        if (isBlocked())
+        {
+            return;
+        }
         isJump = false;
         if (vertical < 0 || !isGround)
             vertical = 0;
@@ -161,9 +175,13 @@ public abstract class CreatureController : MonoBehaviour
 
     protected virtual void animationControll()
     {
+        if (isBlocked() == false)
+            isContiDonchan = false;
         animator.SetBool("Stay", (isGround && !isWalk && !isJump) || isJump || !isGround);
         animator.SetBool("Walk", isGround && isWalk && !isJump);
         animator.SetBool("Hurt", isHurt);
-        isHurt = false;
+        animator.SetBool("Donchan", isDonchan);
+        animator.SetBool("Donchaning", isContiDonchan);
+        isHurt = isDonchan = false;
     }
 }

@@ -38,8 +38,6 @@ public class EnemyController : CreatureController
 
     protected virtual float getMovement()
     {
-        if (isBlocked())
-            return 0;
         if (target == null)
             return 0;
         float selfX = transform.position.x;
