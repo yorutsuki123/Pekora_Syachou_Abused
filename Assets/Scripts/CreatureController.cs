@@ -38,12 +38,22 @@ public abstract class CreatureController : MonoBehaviour
         {
             print("CG attack from " + from);
         }
-        print(type);
+        //print(type);
         if (type == "Hurt")
         {
             isHurt = true;
             hp -= damage;
             if (direction > 0)
+                transform.localScale = new Vector3(Math.Abs(transform.localScale.x) * -1.0f, transform.localScale.y, transform.localScale.z);
+            else
+                transform.localScale = new Vector3(Math.Abs(transform.localScale.x) * 1.0f, transform.localScale.y, transform.localScale.z);
+            rig.velocity = new Vector2(damage * -2 * transform.localScale.x / Math.Abs(transform.localScale.x), rig.velocity.y + damage);
+        }
+        if (type == "Explode")
+        {
+            isHurt = true;
+            hp -= damage;
+            if (direction - transform.position.x < 0)
                 transform.localScale = new Vector3(Math.Abs(transform.localScale.x) * -1.0f, transform.localScale.y, transform.localScale.z);
             else
                 transform.localScale = new Vector3(Math.Abs(transform.localScale.x) * 1.0f, transform.localScale.y, transform.localScale.z);

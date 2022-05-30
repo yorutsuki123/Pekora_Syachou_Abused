@@ -7,11 +7,19 @@ public class PlayerController : CreatureController
 {
     public int buff;
     public int bullet;
-    public bool ableDonchan;
+    public int buff_posion;
+    public int nerf_posion;
+    public float donchanTimer;
+    public float donchanCD;
 
     public GameObject attack1Prefab;
     public GameObject attack2Prefab;
     public GameObject attack3Prefab;
+    public GameObject item1Prefab;
+    public GameObject item2Prefab;
+
+    bool isItem1InUse;
+    bool isItem2InUse;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +35,39 @@ public class PlayerController : CreatureController
 
     void FixedUpdate()
     {
+        if (Input.GetAxisRaw("Item1") > 0)
+        {
+            if (!isItem1InUse)
+            {
+                if (buff_posion > 0)
+                {
+                    Instantiate(item1Prefab, new Vector3(), Quaternion.Euler(new Vector3()));
+                    buff_posion--;
+                }
+            }
+            isItem1InUse = true;
+        }
+        else
+        {
+            isItem1InUse = false;
+        }
+        if(Input.GetAxisRaw("Item2") > 0)
+        {
+            if (!isItem2InUse)
+            {
+                if (nerf_posion > 0)
+                {
+                    Instantiate(item2Prefab, new Vector3(), Quaternion.Euler(new Vector3()));
+                    nerf_posion--;
+                }
+            }
+            isItem2InUse = true;
+        }
+        else
+        {
+            isItem2InUse = false;
+        }
+
         checkGround();
         movingControll(isAttacking ? 0 : Input.GetAxisRaw("Horizontal"));
         jumpingControll(isAttacking ? 0 : Input.GetAxisRaw("Vertical"));
@@ -34,12 +75,20 @@ public class PlayerController : CreatureController
 
     }
 
+    void getStatus()
+    {
+        buff_posion = 10;
+        nerf_posion = 10;
+        bullet = 20;
+        hp = maxHp;
+    }
+
     protected override void init()
     {
         base.init();
+        getStatus();
         buff = 0;
-        bullet = 20;
-        ableDonchan = true;
+        donchanTimer = 0;
     }
 
     public override void getAttacked(int damage, string from, float direction, float block = 0.5f, string type = "Hurt")
@@ -54,8 +103,8 @@ public class PlayerController : CreatureController
         animator.SetBool("Jump", isJump);
         animator.SetBool("Sky", !isGround);
         animator.SetBool("Attack1", !isAttacking && Input.GetAxisRaw("Fire1") != 0);
-        animator.SetBool("Attack2", !isAttacking && Input.GetAxisRaw("Fire2") != 0);
-        animator.SetBool("Attack3", !isAttacking && Input.GetAxisRaw("Fire3") != 0);
+        animator.SetBool("Attack2", !isAttacking && bullet > 0 && Input.GetAxisRaw("Fire2") != 0);
+        animator.SetBool("Attack3", !isAttacking && nowDonchanCD() == 0 && Input.GetAxisRaw("Fire3") != 0);
         animator.SetBool("Hurt", isHurt);
         isHurt = false;
     }
@@ -67,6 +116,7 @@ public class PlayerController : CreatureController
         atkObj.GetComponent<AttackingController>().damage = (int)Math.Ceiling(atkObj.GetComponent<AttackingController>().damage * Math.Pow(2, buff));
         atkObj.GetComponent<AttackingController>().from = "Player";
     }
+
     public void attack2()
     {
         GameObject atkObj = Instantiate(attack2Prefab, transform.position + new Vector3(1.19f * (transform.localScale.x < 0 ? -1 : 1), 0.24f), Quaternion.Euler(new Vector3()));
@@ -75,7 +125,9 @@ public class PlayerController : CreatureController
         atkRig.velocity = new Vector2(25 * (transform.localScale.x < 0 ? -1 : 1), atkRig.velocity.y);
         atkObj.GetComponent<AttackingController>().damage = (int)Math.Ceiling(atkObj.GetComponent<AttackingController>().damage * Math.Pow(2, buff));
         atkObj.GetComponent<AttackingController>().from = "Player";
+        bulletMinus();
     }
+
     public void attack3()
     {
         GameObject atkObj = Instantiate(attack3Prefab, transform.position + new Vector3(1.69f * (transform.localScale.x < 0 ? -1 : 1), 0.672f), Quaternion.Euler(new Vector3()));
@@ -84,5 +136,21 @@ public class PlayerController : CreatureController
         atkRig.velocity = new Vector2(15 * (transform.localScale.x < 0 ? -1 : 1), atkRig.velocity.y);
         atkObj.GetComponent<AttackingController>().damage = -1;
         atkObj.GetComponent<AttackingController>().from = "Player";
+        unableDonchan();
+    }
+
+    public void bulletMinus()
+    {
+        bullet--;
+    }
+
+    public void unableDonchan()
+    {
+        donchanTimer = Time.time + donchanCD;
+    }
+
+    public float nowDonchanCD()
+    {
+        return Math.Max(donchanTimer - Time.time, 0);
     }
 }

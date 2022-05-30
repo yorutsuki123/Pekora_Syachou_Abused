@@ -11,7 +11,7 @@ public class AttackingController : MonoBehaviour
     public float destoryTime;
     public bool destoryByFall;
     public string from;
-
+    public bool isExplosion;
     float timer;
 
     // Start is called before the first frame update
@@ -41,9 +41,12 @@ public class AttackingController : MonoBehaviour
             return;
         if (target != "" && col.gameObject.tag != target)
             return;
-        print(col.gameObject.name);
+        //print(col.gameObject.name);
         if (damage > 0)
-            col.gameObject.GetComponent<CreatureController>().getAttacked(damage, from, transform.localScale.x, blockTime);
+            if (isExplosion)
+                col.gameObject.GetComponent<CreatureController>().getAttacked(damage, from, transform.position.x, blockTime, "Explode");
+            else
+                col.gameObject.GetComponent<CreatureController>().getAttacked(damage, from, transform.localScale.x, blockTime);
         if (damage < 0)
             col.gameObject.GetComponent<CreatureController>().getAttacked(0, from, transform.localScale.x, blockTime, "Donchan");
         if (destoryByFall)

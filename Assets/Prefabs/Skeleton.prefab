@@ -874,7 +874,7 @@ MonoBehaviour:
   isHurt: 0
   isAttacking: 0
   blockedTimer: 0
-  stayDistX: 6
+  stayDistX: 9
   stayMinY: -3
   stayMaxY: 1.5
   trackDistX: 12

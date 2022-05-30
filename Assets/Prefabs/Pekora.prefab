@@ -1942,7 +1942,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 20
   hp: 0
-  atk: 3
   speed: 6
   jumpspeed: 12
   bound: 1
@@ -1954,12 +1953,19 @@ MonoBehaviour:
   blockedTimer: 0
   buff: 0
   bullet: 0
-  ableDonchan: 0
+  buff_posion: 0
+  nerf_posion: 0
+  donchanTimer: 0
+  donchanCD: 0
   attack1Prefab: {fileID: 8706664585299130859, guid: 0665f38d69b14124abb8b72cb4691c32,
     type: 3}
   attack2Prefab: {fileID: 2972883071267920637, guid: a27e08fb64a0635468ce681504773352,
     type: 3}
   attack3Prefab: {fileID: 6106749137280272803, guid: 574921a264440fe49a9558338f768793,
+    type: 3}
+  item1Prefab: {fileID: 2120205188768282420, guid: 347b45078af062643a3b095596646297,
+    type: 3}
+  item2Prefab: {fileID: 2335978301081893828, guid: 6945e64401b5d6a4ab86bd5da6042570,
     type: 3}
 --- !u!1 &3148030731486061133
 GameObject:
