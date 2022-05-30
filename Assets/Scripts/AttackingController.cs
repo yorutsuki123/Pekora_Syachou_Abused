@@ -10,6 +10,7 @@ public class AttackingController : MonoBehaviour
     public float CD;
     public float destoryTime;
     public bool destoryByFall;
+    public string from;
 
     float timer;
 
@@ -40,9 +41,9 @@ public class AttackingController : MonoBehaviour
             return;
         print(col.gameObject.name);
         if (damage > 0)
-            col.gameObject.GetComponent<CreatureController>().getAttacked(damage, blockTime);
+            col.gameObject.GetComponent<CreatureController>().getAttacked(damage, from, blockTime);
         if (damage < 0)
-            col.gameObject.GetComponent<CreatureController>().getAttacked(0, blockTime, "Donchan");
+            col.gameObject.GetComponent<CreatureController>().getAttacked(0, from, blockTime, "Donchan");
         if (destoryByFall)
             Destroy(gameObject);
     }

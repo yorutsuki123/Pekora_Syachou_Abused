@@ -64,6 +64,7 @@ public class PlayerController : CreatureController
     {
         GameObject atkObj = Instantiate(attack1Prefab, transform.position + new Vector3(1.43f * (transform.localScale.x < 0 ? -1 : 1), 0.7f), Quaternion.Euler(new Vector3()));
         atkObj.GetComponent<AttackingController>().damage = (int)Math.Ceiling(atkObj.GetComponent<AttackingController>().damage * Math.Pow(2, buff));
+        atkObj.GetComponent<AttackingController>().from = "Player";
     }
     public void attack2()
     {
@@ -72,6 +73,7 @@ public class PlayerController : CreatureController
         atkObj.GetComponent<AttackingController>().damage = (int)Math.Ceiling(atkObj.GetComponent<AttackingController>().damage * Math.Pow(2, buff));
         atkObj.transform.localScale = new Vector3(atkObj.transform.localScale.x * (transform.localScale.x < 0 ? -1 : 1), atkObj.transform.localScale.y, atkObj.transform.localScale.z);
         atkRig.velocity = new Vector2(25 * (transform.localScale.x < 0 ? -1 : 1), atkRig.velocity.y);
+        atkObj.GetComponent<AttackingController>().from = "Player";
     }
     public void attack3()
     {
@@ -80,5 +82,6 @@ public class PlayerController : CreatureController
         atkObj.GetComponent<AttackingController>().damage = -1;
         atkObj.transform.localScale = new Vector3(atkObj.transform.localScale.x * (transform.localScale.x < 0 ? -1 : 1), atkObj.transform.localScale.y, atkObj.transform.localScale.z);
         atkRig.velocity = new Vector2(15 * (transform.localScale.x < 0 ? -1 : 1), atkRig.velocity.y);
+        atkObj.GetComponent<AttackingController>().from = "Player";
     }
 }

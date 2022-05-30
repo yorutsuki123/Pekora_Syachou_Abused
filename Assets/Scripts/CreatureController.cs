@@ -32,11 +32,11 @@ public abstract class CreatureController : MonoBehaviour
         isAttacking = false;
     }
 
-    public virtual void getAttacked(int damage, float block=0.5f, string type="Hurt")
+    public virtual void getAttacked(int damage, string from, float block=0.5f, string type="Hurt")
     {
         if (damage > hp * 10)
         {
-            print("CG attack");
+            print("CG attack from " + from);
         }
         print(type);
         if (type == "Hurt")

@@ -74,9 +74,9 @@ public abstract class EnemyController : CreatureController
         return (selfX - target.x) < 0 ? 1 : -1;
     }
 
-    public override void getAttacked(int damage, float block = 0.5f, string type = "Hurt")
+    public override void getAttacked(int damage, string from, float block = 0.5f, string type = "Hurt")
     {
-        base.getAttacked(damage, block, type);
+        base.getAttacked(damage, from, block, type);
         if (type == "Donchan")
         {
             isDonchan = true;
