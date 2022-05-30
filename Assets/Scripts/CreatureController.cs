@@ -32,7 +32,7 @@ public abstract class CreatureController : MonoBehaviour
         isAttacking = false;
     }
 
-    public virtual void getAttacked(int damage, string from, float block=0.5f, string type="Hurt")
+    public virtual void getAttacked(int damage, string from, float direction, float block=0.5f, string type="Hurt")
     {
         if (damage > hp * 10)
         {
@@ -43,6 +43,10 @@ public abstract class CreatureController : MonoBehaviour
         {
             isHurt = true;
             hp -= damage;
+            if (direction > 0)
+                transform.localScale = new Vector3(Math.Abs(transform.localScale.x) * -1.0f, transform.localScale.y, transform.localScale.z);
+            else
+                transform.localScale = new Vector3(Math.Abs(transform.localScale.x) * 1.0f, transform.localScale.y, transform.localScale.z);
             rig.velocity = new Vector2(damage * -2 * transform.localScale.x / Math.Abs(transform.localScale.x), rig.velocity.y + damage);
         }
         if (blockedTimer < Time.time + block)

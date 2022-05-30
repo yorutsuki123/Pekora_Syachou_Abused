@@ -37,13 +37,15 @@ public class AttackingController : MonoBehaviour
     {
         if (destoryByFall && col.gameObject.tag == "Ground")
             Destroy(gameObject);
+        if (col.gameObject.tag != "Player" && col.gameObject.tag != "Enemy")
+            return;
         if (target != "" && col.gameObject.tag != target)
             return;
         print(col.gameObject.name);
         if (damage > 0)
-            col.gameObject.GetComponent<CreatureController>().getAttacked(damage, from, blockTime);
+            col.gameObject.GetComponent<CreatureController>().getAttacked(damage, from, transform.localScale.x, blockTime);
         if (damage < 0)
-            col.gameObject.GetComponent<CreatureController>().getAttacked(0, from, blockTime, "Donchan");
+            col.gameObject.GetComponent<CreatureController>().getAttacked(0, from, transform.localScale.x, blockTime, "Donchan");
         if (destoryByFall)
             Destroy(gameObject);
     }

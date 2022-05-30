@@ -129,3 +129,4 @@ MonoBehaviour:
   CD: 0
   destoryTime: 0.25
   destoryByFall: 0
+  from: 

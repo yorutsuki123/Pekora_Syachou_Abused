@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7238545959658717912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: right_leh_solver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5402017970770633963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7007880364427176509}
   - component: {fileID: 8992883596426756674}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: left_leg_solver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6846231428086870315}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4605608240249075856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 1414182330}
   - component: {fileID: 1414182329}
   - component: {fileID: 832389035}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6991026015049798182}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088178804922237656}
   - component: {fileID: 9183846069944991422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_solver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1037928895595487177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: right_hand_solver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7614208185301094094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -607,7 +607,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3544169817226264504}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3525462389746558467}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6591024862410854415}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body_solver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7430734475634685286}
   - component: {fileID: 2908570695827740801}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: right_hand_solver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5571717508451531262}
   - component: {fileID: 767674207408102954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: right_leg_solver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9057109296880933207}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -858,7 +858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2665509079689343801}
   - component: {fileID: 6455482879711741926}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: body_solver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -921,7 +921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 362789955412551676}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -951,7 +951,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2656242952449432611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -981,7 +981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9120565150285795244}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1015,7 +1015,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4150415623546783473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1047,7 +1047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4534659597167358883}
   - component: {fileID: 7050822587009350055}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: left_hand_solver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1110,7 +1110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8475821835029250473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: left_leg_solver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1140,7 +1140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 999906776007208839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,7 +1173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3967444808479375147}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1204,7 +1204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2156644350952801745}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1235,7 +1235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8961414604118266849}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_solver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1265,7 +1265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8714616885159805763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1296,7 +1296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6118197240957897666}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: left_hand_solver_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1326,7 +1326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8457968740195182341}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}

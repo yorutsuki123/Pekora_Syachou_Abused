@@ -40,7 +40,14 @@ public abstract class EnemyController : CreatureController
         if (player != null)
             target = player.transform.position;
         checkGround();
-        isAttack = (isCanAttack && !isAttacking && attackTimer <= Time.time);
+        isAttack = (isCanAttack && !isAttacking && !isBlocked() && attackTimer <= Time.time);
+        if (isAttack)
+        {
+            if (transform.position.x > target.x)
+                transform.localScale = new Vector3(Math.Abs(transform.localScale.x) * -1.0f, transform.localScale.y, transform.localScale.z);
+            else
+                transform.localScale = new Vector3(Math.Abs(transform.localScale.x) * 1.0f, transform.localScale.y, transform.localScale.z);
+        }
         float m = getMovement();
         movingControll(m);
         jumpingControll((m != 0 && isFrontGround()) ? 1 : 0);
@@ -74,9 +81,9 @@ public abstract class EnemyController : CreatureController
         return (selfX - target.x) < 0 ? 1 : -1;
     }
 
-    public override void getAttacked(int damage, string from, float block = 0.5f, string type = "Hurt")
+    public override void getAttacked(int damage, string from, float direction, float block = 0.5f, string type = "Hurt")
     {
-        base.getAttacked(damage, from, block, type);
+        base.getAttacked(damage, from, direction, block, type);
         if (type == "Donchan")
         {
             isDonchan = true;

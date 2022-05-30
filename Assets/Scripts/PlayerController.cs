@@ -42,9 +42,9 @@ public class PlayerController : CreatureController
         ableDonchan = true;
     }
 
-    public override void getAttacked(int damage, string from, float block = 0.5f, string type = "Hurt")
+    public override void getAttacked(int damage, string from, float direction, float block = 0.5f, string type = "Hurt")
     {
-        base.getAttacked((int)(damage * Math.Pow(2, -1 * buff)), from, block, type);
+        base.getAttacked((int)(damage * Math.Pow(2, -1 * buff)), from, direction, block, type);
     }
 
     protected override void animationControll()
@@ -63,6 +63,7 @@ public class PlayerController : CreatureController
     public void attack1()
     {
         GameObject atkObj = Instantiate(attack1Prefab, transform.position + new Vector3(1.43f * (transform.localScale.x < 0 ? -1 : 1), 0.7f), Quaternion.Euler(new Vector3()));
+        atkObj.transform.localScale = new Vector3(atkObj.transform.localScale.x * (transform.localScale.x < 0 ? -1 : 1), atkObj.transform.localScale.y, atkObj.transform.localScale.z);
         atkObj.GetComponent<AttackingController>().damage = (int)Math.Ceiling(atkObj.GetComponent<AttackingController>().damage * Math.Pow(2, buff));
         atkObj.GetComponent<AttackingController>().from = "Player";
     }
@@ -70,18 +71,18 @@ public class PlayerController : CreatureController
     {
         GameObject atkObj = Instantiate(attack2Prefab, transform.position + new Vector3(1.19f * (transform.localScale.x < 0 ? -1 : 1), 0.24f), Quaternion.Euler(new Vector3()));
         Rigidbody2D atkRig = atkObj.GetComponent<Rigidbody2D>();
-        atkObj.GetComponent<AttackingController>().damage = (int)Math.Ceiling(atkObj.GetComponent<AttackingController>().damage * Math.Pow(2, buff));
         atkObj.transform.localScale = new Vector3(atkObj.transform.localScale.x * (transform.localScale.x < 0 ? -1 : 1), atkObj.transform.localScale.y, atkObj.transform.localScale.z);
         atkRig.velocity = new Vector2(25 * (transform.localScale.x < 0 ? -1 : 1), atkRig.velocity.y);
+        atkObj.GetComponent<AttackingController>().damage = (int)Math.Ceiling(atkObj.GetComponent<AttackingController>().damage * Math.Pow(2, buff));
         atkObj.GetComponent<AttackingController>().from = "Player";
     }
     public void attack3()
     {
         GameObject atkObj = Instantiate(attack3Prefab, transform.position + new Vector3(1.69f * (transform.localScale.x < 0 ? -1 : 1), 0.672f), Quaternion.Euler(new Vector3()));
         Rigidbody2D atkRig = atkObj.GetComponent<Rigidbody2D>();
-        atkObj.GetComponent<AttackingController>().damage = -1;
         atkObj.transform.localScale = new Vector3(atkObj.transform.localScale.x * (transform.localScale.x < 0 ? -1 : 1), atkObj.transform.localScale.y, atkObj.transform.localScale.z);
         atkRig.velocity = new Vector2(15 * (transform.localScale.x < 0 ? -1 : 1), atkRig.velocity.y);
+        atkObj.GetComponent<AttackingController>().damage = -1;
         atkObj.GetComponent<AttackingController>().from = "Player";
     }
 }

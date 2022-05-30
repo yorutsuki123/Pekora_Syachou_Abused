@@ -9,6 +9,7 @@ public class SlimeController : EnemyController
     {
         GameObject atkObj = Instantiate(attackPrefab, transform.position + new Vector3(0.401f * (transform.localScale.x < 0 ? -1 : 1), 0.6f), Quaternion.Euler(new Vector3()));
         attackTimer = Time.time + atkObj.GetComponent<AttackingController>().CD;
+        atkObj.transform.localScale = new Vector3(atkObj.transform.localScale.x * (transform.localScale.x < 0 ? -1 : 1), atkObj.transform.localScale.y, atkObj.transform.localScale.z);
         atkObj.GetComponent<AttackingController>().from = "Slime";
     }
 }
