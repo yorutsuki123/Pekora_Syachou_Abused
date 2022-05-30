@@ -1956,7 +1956,7 @@ MonoBehaviour:
   buff_posion: 0
   nerf_posion: 0
   donchanTimer: 0
-  donchanCD: 0
+  donchanCD: 5
   attack1Prefab: {fileID: 8706664585299130859, guid: 0665f38d69b14124abb8b72cb4691c32,
     type: 3}
   attack2Prefab: {fileID: 2972883071267920637, guid: a27e08fb64a0635468ce681504773352,
