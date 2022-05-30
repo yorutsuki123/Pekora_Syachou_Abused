@@ -42,9 +42,9 @@ public class PlayerController : CreatureController
         ableDonchan = true;
     }
 
-    public override void getAttacked(int damage, float block = 0.5f, string type = "Hurt")
+    public override void getAttacked(int damage, string from, float block = 0.5f, string type = "Hurt")
     {
-        base.getAttacked((int)(damage * Math.Pow(2, -1 * buff)), block, type);
+        base.getAttacked((int)(damage * Math.Pow(2, -1 * buff)), from, block, type);
     }
 
     protected override void animationControll()
