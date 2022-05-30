@@ -7,7 +7,6 @@ public abstract class CreatureController : MonoBehaviour
 {
     public int maxHp;
     public int hp;
-    public int atk;
 
     public float speed;
     public float jumpspeed;
@@ -16,8 +15,6 @@ public abstract class CreatureController : MonoBehaviour
     [SerializeField] protected bool isWalk;
     [SerializeField] protected bool isJump;
     [SerializeField] protected bool isHurt;
-    [SerializeField] protected bool isDonchan;
-    [SerializeField] protected bool isContiDonchan;
     [SerializeField] protected bool isAttacking;
     [SerializeField] protected float blockedTimer;
 
@@ -35,7 +32,7 @@ public abstract class CreatureController : MonoBehaviour
         isAttacking = false;
     }
 
-    public void getAttacked(int damage, float block=0.5f, string type="Hurt")
+    public virtual void getAttacked(int damage, float block=0.5f, string type="Hurt")
     {
         if (damage > hp * 10)
         {
@@ -43,15 +40,17 @@ public abstract class CreatureController : MonoBehaviour
         }
         print(type);
         if (type == "Hurt")
-            isHurt = true;
-        if (type == "Donchan")
         {
-            isDonchan = true;
-            isContiDonchan = true;
+            isHurt = true;
+            hp -= damage;
+            rig.velocity = new Vector2(damage * -2 * transform.localScale.x / Math.Abs(transform.localScale.x), rig.velocity.y + damage);
         }
-        hp -= damage;
         if (blockedTimer < Time.time + block)
             blockedTimer = Time.time + block;
+    }
+
+    public void destoryWhenDie()
+    {
         if (hp <= 0)
         {
             Destroy(gameObject);
@@ -63,7 +62,7 @@ public abstract class CreatureController : MonoBehaviour
         return blockedTimer > Time.time;
     }
 
-    protected void init()
+    protected virtual void init()
     {
         rig = gameObject.GetComponent<Rigidbody2D>();
         bc = gameObject.GetComponent<BoxCollider2D>();
@@ -72,7 +71,6 @@ public abstract class CreatureController : MonoBehaviour
         isWalk = false;
         isJump = false;
         isHurt = false;
-        isDonchan = false;
         isAttacking = false;
         hp = maxHp;
         blockedTimer = 0;
@@ -173,15 +171,5 @@ public abstract class CreatureController : MonoBehaviour
         }
     }
 
-    protected virtual void animationControll()
-    {
-        if (isBlocked() == false)
-            isContiDonchan = false;
-        animator.SetBool("Stay", (isGround && !isWalk && !isJump) || isJump || !isGround);
-        animator.SetBool("Walk", isGround && isWalk && !isJump);
-        animator.SetBool("Hurt", isHurt);
-        animator.SetBool("Donchan", isDonchan);
-        animator.SetBool("Donchaning", isContiDonchan);
-        isHurt = isDonchan = false;
-    }
+    protected abstract void animationControll();
 }

@@ -17,8 +17,6 @@ public class PlayerController : CreatureController
     void Start()
     {
         init();
-        buff = 0;
-        ableDonchan = true;
     }
 
     // Update is called once per frame
@@ -34,6 +32,19 @@ public class PlayerController : CreatureController
         jumpingControll(isAttacking ? 0 : Input.GetAxisRaw("Vertical"));
         animationControll();
 
+    }
+
+    protected override void init()
+    {
+        base.init();
+        buff = 0;
+        bullet = 20;
+        ableDonchan = true;
+    }
+
+    public override void getAttacked(int damage, float block = 0.5f, string type = "Hurt")
+    {
+        base.getAttacked((int)(damage * Math.Pow(2, -1 * buff)), block, type);
     }
 
     protected override void animationControll()
@@ -52,13 +63,13 @@ public class PlayerController : CreatureController
     public void attack1()
     {
         GameObject atkObj = Instantiate(attack1Prefab, transform.position + new Vector3(1.43f * (transform.localScale.x < 0 ? -1 : 1), 0.7f), Quaternion.Euler(new Vector3()));
-        atkObj.GetComponent<AttackingController>().damage = atk * (int)Math.Pow(2, buff);
+        atkObj.GetComponent<AttackingController>().damage = (int)Math.Ceiling(atkObj.GetComponent<AttackingController>().damage * Math.Pow(2, buff));
     }
     public void attack2()
     {
         GameObject atkObj = Instantiate(attack2Prefab, transform.position + new Vector3(1.19f * (transform.localScale.x < 0 ? -1 : 1), 0.24f), Quaternion.Euler(new Vector3()));
         Rigidbody2D atkRig = atkObj.GetComponent<Rigidbody2D>();
-        atkObj.GetComponent<AttackingController>().damage = atk * (int)Math.Pow(2, buff);
+        atkObj.GetComponent<AttackingController>().damage = (int)Math.Ceiling(atkObj.GetComponent<AttackingController>().damage * Math.Pow(2, buff));
         atkObj.transform.localScale = new Vector3(atkObj.transform.localScale.x * (transform.localScale.x < 0 ? -1 : 1), atkObj.transform.localScale.y, atkObj.transform.localScale.z);
         atkRig.velocity = new Vector2(25 * (transform.localScale.x < 0 ? -1 : 1), atkRig.velocity.y);
     }
