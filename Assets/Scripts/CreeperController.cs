@@ -57,6 +57,8 @@ public class CreeperController : EnemyController
             isContiDonchan = false;
         if (isAttack)
             isExploding = true;
+        if (isExploding)
+            destoryWhenDie();
         animator.SetBool("Stay", !isContiDonchan && !isExploding && ((isGround && !isWalk && !isJump) || isJump || !isGround));
         animator.SetBool("Walk", !isContiDonchan && !isExploding && isGround && isWalk && !isJump);
         animator.SetBool("Hurt", !isExploding && isHurt);
