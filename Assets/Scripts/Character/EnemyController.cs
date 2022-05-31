@@ -33,7 +33,7 @@ public abstract class EnemyController : CreatureController
         
     }
 
-    protected void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (player == null)
             player = GameObject.FindWithTag("Player");
