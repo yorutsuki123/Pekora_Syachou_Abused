@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Ch2Plot : MonoBehaviour
+public class Ch3Plot : MonoBehaviour
 {
     [Header("UI組件")]
     public Text TextLabel;
-    public Image Pekora,Miko;
-    public Image Name,Dialog;
+    public Image Pekora,Aqua;
+    public Image Name;
 
     [Header("文本文件")]
     public TextAsset TextFile;
 
     [Header("立繪")]
-    public Sprite PekoraBright,PekoraDark,MikoBright,MikoDark;
-    public Sprite PekoraName,MoonaName;
+    public Sprite PekoraBright,PekoraDark,AquaBright,AquaDark;
+    public Sprite PekoraName,AquaName;
 
     public int index;
     public float TextSpeed;
@@ -74,22 +74,22 @@ public class Ch2Plot : MonoBehaviour
     {
         TextFinished = false;
         TextLabel.text = "";
+        print(TextList[index]);
 
-        switch(TextList[index])
+        if (TextList[index][0] == 'P')
         {
-            case "Pekora":
-                Pekora.sprite = PekoraBright;
-                Miko.sprite = MikoDark;
-                Name.sprite = PekoraName;
-                index++;
-                break;
+            Pekora.sprite = PekoraBright;
+            Aqua.sprite = AquaDark;
+            Name.sprite = PekoraName;
+            index++;
+        }
 
-            case "Miko":
-                Pekora.sprite = PekoraDark;
-                Miko.sprite = MikoBright;
-                Name.sprite = MoonaName;
-                index++;
-                break;
+        if (TextList[index][0] == 'M')
+        {
+            Pekora.sprite = PekoraDark;
+            Aqua.sprite = AquaBright;
+            Name.sprite = AquaName;
+            index++;
         }
 
         int Letter = 0;
