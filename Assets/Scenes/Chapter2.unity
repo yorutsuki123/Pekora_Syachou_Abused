@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 628831035}
   - component: {fileID: 628831034}
   m_Layer: 5
-  m_Name: Miko(Image)
+  m_Name: Right(Image)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,8 +298,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -640, y: -126}
-  m_SizeDelta: {x: 640, y: 108}
+  m_AnchoredPosition: {x: -744, y: -126}
+  m_SizeDelta: {x: 432, y: 108}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &723899437
 MonoBehaviour:
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 1173412522}
   - component: {fileID: 1173412521}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Dialog(Text)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,7 +627,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1961238753}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -655,12 +655,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 48
+    m_Font: {fileID: 12800000, guid: 8c2220bd5fd560c4297e93c4c66a2ba8, type: 3}
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
-    m_MaxSize: 48
+    m_MaxSize: 64
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -676,6 +676,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173412519}
   m_CullTransparentMesh: 1
+--- !u!1 &1207709647
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207709648}
+  - component: {fileID: 1207709650}
+  - component: {fileID: 1207709649}
+  m_Layer: 5
+  m_Name: Name(Text)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1207709648
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207709647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1961238753}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -744, y: -126}
+  m_SizeDelta: {x: 345.6, y: 86.4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1207709649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207709647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 64
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 64
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1207709650
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207709647}
+  m_CullTransparentMesh: 1
 --- !u!1 &1961238752
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +767,7 @@ GameObject:
   - component: {fileID: 1961238755}
   - component: {fileID: 1961238754}
   - component: {fileID: 1961238756}
+  - component: {fileID: 1961238757}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -710,6 +790,7 @@ RectTransform:
   - {fileID: 628831033}
   - {fileID: 723899436}
   - {fileID: 1118319624}
+  - {fileID: 1207709648}
   - {fileID: 1173412520}
   m_Father: {fileID: 1106990240}
   m_RootOrder: 0
@@ -769,18 +850,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc672eae04f6fb468770399acd19936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextLabel: {fileID: 0}
-  Pekora: {fileID: 0}
-  Miko: {fileID: 0}
-  Name: {fileID: 0}
+  TextFile: {fileID: 4900000, guid: 44bf886c77fba614a9f660f9614670f6, type: 3}
+  TextName: {fileID: 1207709649}
+  TextLabel: {fileID: 1173412521}
+  LeftPicture: {fileID: 2045736414}
+  RightPicture: {fileID: 628831034}
+  Name: {fileID: 723899437}
+  Dialog: {fileID: 1118319625}
+  NameBackground: {fileID: 0}
+  DialogBackground: {fileID: 0}
+  LeftBright: {fileID: 0}
+  RightBright: {fileID: 0}
+  LeftDark: {fileID: 0}
+  RightDark: {fileID: 0}
+  LeftBackground: {fileID: 0}
+  RightBackground: {fileID: 0}
+  TextIndex: 0
+  TextSpeed: 0
+--- !u!114 &1961238757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961238752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc672eae04f6fb468770399acd19936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   TextFile: {fileID: 0}
-  PekoraBright: {fileID: 0}
-  PekoraDark: {fileID: 0}
-  MikoBright: {fileID: 0}
-  MikoDark: {fileID: 0}
-  PekoraName: {fileID: 0}
-  MikoName: {fileID: 0}
-  index: 0
+  TextName: {fileID: 0}
+  TextLabel: {fileID: 0}
+  LeftPicture: {fileID: 0}
+  RightPicture: {fileID: 0}
+  Name: {fileID: 0}
+  Dialog: {fileID: 0}
+  NameBackground: {fileID: 0}
+  DialogBackground: {fileID: 0}
+  LeftBright: {fileID: 0}
+  RightBright: {fileID: 0}
+  LeftDark: {fileID: 0}
+  RightDark: {fileID: 0}
+  LeftBackground: {fileID: 0}
+  RightBackground: {fileID: 0}
+  TextIndex: 0
   TextSpeed: 0
 --- !u!1 &2045736412
 GameObject:
@@ -794,7 +908,7 @@ GameObject:
   - component: {fileID: 2045736415}
   - component: {fileID: 2045736414}
   m_Layer: 5
-  m_Name: Pekora(Image)
+  m_Name: Left(Image)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

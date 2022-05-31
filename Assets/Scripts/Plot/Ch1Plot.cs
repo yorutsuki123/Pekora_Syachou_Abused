@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,19 +6,25 @@ using UnityEngine.UI;
 
 public class Ch1Plot : MonoBehaviour
 {
-    [Header("UI組件")]
-    public Text TextLabel;
-    public Image Pekora,Moona;
-    public Image Name;
-
+    
     [Header("文本文件")]
     public TextAsset TextFile;
 
-    [Header("立繪")]
-    public Sprite PekoraBright,PekoraDark,MoonaBright,MoonaDark;
-    public Sprite PekoraName,MoonaName;
+    [Header("UI組件")]
+    public Text TextName;
+    public Text TextLabel;
+    public Image LeftPicture,RightPicture;
+    public Image Name,Dialog;
 
-    public int index;
+    [Header("圖片")]
+    public Sprite NameBackground;
+    public Sprite DialogBackground;
+    public Sprite LeftBright,RightBright;
+    public Sprite LeftDark,RightDark;
+    public Sprite LeftBackground,RightBackground;
+
+    [Header("數值")]
+    public int TextIndex;
     public float TextSpeed;
     bool TextFinished;
     bool QuickShow;
@@ -32,15 +39,19 @@ public class Ch1Plot : MonoBehaviour
     private void OnEnable()
     {
         TextFinished = true;
+        Name.sprite = NameBackground;
+        Dialog.sprite = DialogBackground;
+        LeftPicture.sprite = LeftBackground;
+        RightPicture.sprite = RightBackground;
         StartCoroutine(SetTextUI());
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && index == TextList.Count)
+        if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
         {
             gameObject.SetActive(false);
-            index = 0;
+            TextIndex = 0;
             return;
         }
 
@@ -60,64 +71,49 @@ public class Ch1Plot : MonoBehaviour
     void GetSetFromFile(TextAsset file)
     {
         TextList.Clear();
-        index = 0;
+        TextIndex = 0;
 
-        var LIneData = file.text.Split('\n');
-
-        foreach (var Line in LIneData)
+        var LineData = file.text.Split('\n');
+        
+        foreach (var Line in LineData)
         {
             TextList.Add(Line);
         }
+
     }
 
     IEnumerator SetTextUI()
     {
         TextFinished = false;
         TextLabel.text = "";
-        print(TextList[index]);
 
-        /*switch (TextList[index])
+        if (TextList[TextIndex][0] == 'P')
         {
-            case "Pekora":
-                Pekora.sprite = PekoraBright;
-                Moona.sprite = MoonaDark;
-                Name.sprite = PekoraName;
-                break;
-
-            case "Moona":
-                Pekora.sprite = PekoraDark;
-                Moona.sprite = MoonaBright;
-                Name.sprite = MoonaName;
-                break;
-        }*/
-
-        if (TextList[index][0] == 'P')
-        {
-            Pekora.sprite = PekoraBright;
-            Moona.sprite = MoonaDark;
-            Name.sprite = PekoraName;
-            index++;
+            LeftPicture.sprite = LeftBright;
+            RightPicture.sprite = RightDark;
+            TextName.text = "Pekora";
+            TextIndex++;
         }
 
-        if (TextList[index][0] == 'M')
+        if (TextList[TextIndex][0] == 'M')
         {
-            Pekora.sprite = PekoraDark;
-            Moona.sprite = MoonaBright;
-            Name.sprite = MoonaName;
-            index++;
+            LeftPicture.sprite = LeftDark;
+            RightPicture.sprite = RightBright;
+            TextName.text = "Moona";
+            TextIndex++;
         }
 
         int Letter = 0;
-        while (!QuickShow && Letter < TextList[index].Length -1)
+        while (!QuickShow && Letter < TextList[TextIndex].Length -1)
         {
-            TextLabel.text += TextList[index][Letter];
+            TextLabel.text += TextList[TextIndex][Letter];
             Letter++;
             yield return new WaitForSeconds(TextSpeed);
         }
 
-        TextLabel.text = TextList[index];
+        TextLabel.text = TextList[TextIndex];
         QuickShow = false;
         TextFinished = true;
-        index++;
+        TextIndex++;
     }
 }
