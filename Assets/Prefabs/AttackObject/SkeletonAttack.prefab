@@ -145,9 +145,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: Player
-  damage: 2
+  damage: 4
   blockTime: 0.5
   CD: 2
   destoryTime: 100
   destoryByFall: 1
   from: 
+  isExplosion: 0

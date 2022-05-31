@@ -7,6 +7,7 @@ public class CameraController : MonoBehaviour
 {
     public float boundMin;
     public float boundMax;
+    public float horizontal;
     public float vertical;
     GameObject player;
 
@@ -29,12 +30,13 @@ public class CameraController : MonoBehaviour
         else
         {
             Vector3 pos = player.transform.position;
-            if (boundMin > pos.x)
+            float h = horizontal;
+            if (boundMin > pos.x + h)
                 transform.position = new Vector3(boundMin, pos.y + vertical, transform.position.z);
-            else if (boundMax < pos.x)
+            else if (boundMax < pos.x + h)
                 transform.position = new Vector3(boundMax, pos.y + vertical, transform.position.z);
             else
-                transform.position = new Vector3(pos.x, pos.y + vertical, transform.position.z);
+                transform.position = new Vector3(pos.x + h, pos.y + vertical, transform.position.z);
         }
     }
 }

@@ -111,7 +111,10 @@ public abstract class EnemyController : CreatureController
 
     private void OnDestroy()
     {
-        GameObject.FindWithTag("MainCamera").GetComponent<GameRule>().randomDropItem(transform.position);
+        GameObject cam = GameObject.FindWithTag("MainCamera");
+        if (cam != null)
+            cam.GetComponent<GameRule>().randomDropItem(transform.position);
+
     }
 
     protected abstract void attack();

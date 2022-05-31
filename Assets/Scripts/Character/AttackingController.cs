@@ -37,6 +37,8 @@ public class AttackingController : MonoBehaviour
     {
         if (destoryByFall && col.gameObject.tag == "Ground")
             Destroy(gameObject);
+        if (isExplosion && timer > 0.1) 
+            return;
         if (col.gameObject.tag != "Player" && col.gameObject.tag != "Enemy")
             return;
         if (target != "" && col.gameObject.tag != target)

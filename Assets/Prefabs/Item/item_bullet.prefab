@@ -146,3 +146,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effector: {fileID: 5556901667693411902, guid: 82ff4e6709e01ba419bd06d441d83767,
     type: 3}
+  n: 2

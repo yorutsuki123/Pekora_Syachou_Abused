@@ -146,8 +146,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: Enemy
   damage: 3
-  blockTime: 0.5
+  blockTime: 0.4
   CD: 0
   destoryTime: 100
   destoryByFall: 1
   from: 
+  isExplosion: 0

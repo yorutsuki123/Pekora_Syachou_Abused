@@ -77,9 +77,9 @@ public class PlayerController : CreatureController
 
     void getStatus()
     {
-        buff_posion = 10;
-        nerf_posion = 10;
-        bullet = 20;
+        buff_posion = 0;
+        nerf_posion = 0;
+        bullet = 10;
         hp = maxHp;
     }
 

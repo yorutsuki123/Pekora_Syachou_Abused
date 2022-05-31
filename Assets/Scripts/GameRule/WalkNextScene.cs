@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public abstract class ItemPickup : MonoBehaviour
+public class WalkNextScene : MonoBehaviour
 {
-    public GameObject effector;
-
+    public string nextScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,15 +18,11 @@ public abstract class ItemPickup : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        print(col.gameObject.tag);
         if (col.gameObject.tag != "Player")
             return;
-        effect(col.gameObject);
-        Instantiate(effector);
-        Destroy(gameObject);
+        GameObject.FindWithTag("MainCamera").GetComponent<GameRule>().isEnd = true;
+        SceneManager.LoadScene(nextScene);
     }
-
-    protected abstract void effect(GameObject obj);
 }
