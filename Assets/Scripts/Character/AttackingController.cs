@@ -12,6 +12,9 @@ public class AttackingController : MonoBehaviour
     public bool destoryByFall;
     public string from;
     public bool isExplosion;
+    public float explosionTime;
+    public float fallGenerateProb;
+    public GameObject fallGenerate;
     float timer;
 
     // Start is called before the first frame update
@@ -36,8 +39,15 @@ public class AttackingController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (destoryByFall && col.gameObject.tag == "Ground")
+        {
+            if (fallGenerateProb > 0 && Random.Range(0.0f, 1.0f) <= fallGenerateProb)
+            {
+                Instantiate(fallGenerate, col.ClosestPoint(transform.position), Quaternion.Euler(new Vector3()));
+            }
             Destroy(gameObject);
-        if (isExplosion && timer > 0.1) 
+        }
+            
+        if (isExplosion && timer > explosionTime) 
             return;
         if (col.gameObject.tag != "Player" && col.gameObject.tag != "Enemy")
             return;

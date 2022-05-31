@@ -67,8 +67,14 @@ public abstract class CreatureController : MonoBehaviour
     {
         if (hp <= 0)
         {
+            whenDie();
             Destroy(gameObject);
         }
+    }
+
+    protected virtual void whenDie()
+    {
+
     }
 
     protected bool isBlocked()

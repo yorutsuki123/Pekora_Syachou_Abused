@@ -14600,6 +14600,7 @@ MonoBehaviour:
   destoryByFall: 0
   from: 
   isExplosion: 1
+  explosionTime: 0.1
 --- !u!1 &7899129603193091229
 GameObject:
   m_ObjectHideFlags: 0

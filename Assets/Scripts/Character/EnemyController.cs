@@ -109,12 +109,9 @@ public abstract class EnemyController : CreatureController
         isHurt = isDonchan = isAttack = false;
     }
 
-    private void OnDestroy()
+    protected override void whenDie()
     {
-        GameObject cam = GameObject.FindWithTag("MainCamera");
-        if (cam != null)
-            cam.GetComponent<GameRule>().randomDropItem(transform.position);
-
+        GameObject.FindWithTag("MainCamera").GetComponent<GameRule>().randomDropItem(transform.position);
     }
 
     protected abstract void attack();
