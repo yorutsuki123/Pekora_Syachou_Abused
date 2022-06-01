@@ -8,6 +8,13 @@ using UnityEngine.SceneManagement;
 public class StartButton : MonoBehaviour
 {
 
+    public GameObject tutor;
+
+    private void Start()
+    {
+        noIntroduction();
+    }
+
     public void StartGame()
     {
         Time.timeScale = 1;
@@ -23,6 +30,11 @@ public class StartButton : MonoBehaviour
 
     public void Introduction()
     {
-        
+        tutor.SetActive(true);
+    }
+
+    public void noIntroduction()
+    {
+        tutor.SetActive(false);
     }
 }
