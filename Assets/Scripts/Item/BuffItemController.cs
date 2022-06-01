@@ -23,7 +23,15 @@ public class BuffItemController : MonoBehaviour
     {
         if (destoryTime < Time.time)
         {
-            player.GetComponent<PlayerController>().buff -= buff;
+            try
+            {
+                player.GetComponent<PlayerController>().buff -= buff;
+            }
+            catch (System.Exception)
+            {
+
+            }
+            
             Destroy(gameObject);
         }
     }

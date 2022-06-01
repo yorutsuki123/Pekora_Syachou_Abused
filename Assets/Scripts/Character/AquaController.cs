@@ -13,9 +13,22 @@ public class AquaController : EnemyController
     [SerializeField] int attackNum;
     [SerializeField] int counter;
     [SerializeField] int skillroll;
+    GameRule gameRule;
 
     protected override void FixedUpdate()
     {
+        try
+        {
+            if (gameRule == null)
+                gameRule = GameObject.FindWithTag("MainCamera").GetComponent<GameRule>();
+            else if (gameRule.isEnd)
+                return;
+        }
+        catch (System.Exception)
+        {
+
+        }
+        
         if (player == null)
             player = GameObject.FindWithTag("Player");
         if (player != null)
@@ -116,6 +129,7 @@ public class AquaController : EnemyController
     {
         if (hp > 0 && damage > hp * 10)
         {
+            gameRule.AquaCG = true;
             print("CG attack from " + from);
         }
         if (type == "Hurt" || type == "Explode")
@@ -150,6 +164,7 @@ public class AquaController : EnemyController
     protected override void whenDie()
     {
         Destroy(HPUI);
+        gameRule.pekoraWin();
         print("BOSS DEAD");
     }
 

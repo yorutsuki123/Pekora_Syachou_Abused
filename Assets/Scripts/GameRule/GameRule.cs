@@ -19,6 +19,9 @@ public class GameRule : MonoBehaviour
     public PlayerStatus ps;
 
     public GameObject gameOverUI;
+    public GameObject youwinUI;
+    public GameObject pekoGameOverUI;
+    public GameObject aquaGameOverUI;
     public bool PekoCG;
     public bool AquaCG;
 
@@ -27,6 +30,9 @@ public class GameRule : MonoBehaviour
     void Start()
     {
         gameOverUI.SetActive(false);
+        youwinUI.SetActive(false);
+        pekoGameOverUI.SetActive(false);
+        aquaGameOverUI.SetActive(false);
         ps = new PlayerStatus();
         ps.ReadFromFile();
         if (ps.last_world == world + 1)
@@ -77,13 +83,46 @@ public class GameRule : MonoBehaviour
 
     public void gameOver()
     {
+        if (world == 3)
+            pekoGameOverUI.SetActive(false);
+        isEnd = true;
         gameOverUI.SetActive(true);
-        Time.timeScale = 0;
+        //if (world != 3)
+            //Time.timeScale = 0;
+    }
+
+    public void pekoGameOver()
+    {
+        isEnd = true;
+        pekoGameOverUI.SetActive(true);
+    }
+
+    public void pekoraWin()
+    {
+        isEnd = true;
+        youwinUI.SetActive(true);
+    }
+
+    public void aquaGameOver()
+    {
+        if (AquaCG)
+        {
+            aquaGameOverUI.SetActive(true);
+            youwinUI.SetActive(false);
+        }
+        else
+            toEnd();
     }
 
     public void backtotitle()
     {
+        print("back to title");
         SceneManager.LoadScene("Start");
+    }
+
+    public void toEnd()
+    {
+        SceneManager.LoadScene("ChapterEnd");
     }
 
 }

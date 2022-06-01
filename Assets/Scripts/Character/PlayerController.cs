@@ -36,6 +36,17 @@ public class PlayerController : CreatureController
 
     void FixedUpdate()
     {
+        try
+        {
+            if (gameRule == null)
+                gameRule = GameObject.FindWithTag("MainCamera").GetComponent<GameRule>();
+            else if (gameRule.isEnd)
+                return;
+        }
+        catch (System.Exception)
+        {
+
+        }
         if (Input.GetAxisRaw("Item1") > 0)
         {
             if (!isItem1InUse)
@@ -95,6 +106,11 @@ public class PlayerController : CreatureController
 
     public override void getAttacked(int damage, string from, float direction, float block = 0.5f, string type = "Hurt")
     {
+        if (hp > 0 && (int)(damage * Math.Pow(2, -1 * buff)) >= hp * 10)
+        {
+            print("CG attack from " + from);
+            gameRule.PekoCG = true;
+        }
         base.getAttacked((int)(damage * Math.Pow(2, -1 * buff)), from, direction, block, type);
     }
 
@@ -159,6 +175,9 @@ public class PlayerController : CreatureController
     protected override void whenDie()
     {
         print("PEKO DEAD");
-        gameRule.gameOver();
+        if (gameRule.world == 3 && gameRule.PekoCG)
+            gameRule.pekoGameOver();
+        else
+            gameRule.gameOver();
     }
 }
