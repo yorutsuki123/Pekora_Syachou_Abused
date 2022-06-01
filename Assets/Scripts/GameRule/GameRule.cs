@@ -29,10 +29,13 @@ public class GameRule : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (world == 3)
+        {
+            youwinUI.SetActive(false);
+            pekoGameOverUI.SetActive(false);
+            aquaGameOverUI.SetActive(false);
+        }
         gameOverUI.SetActive(false);
-        youwinUI.SetActive(false);
-        pekoGameOverUI.SetActive(false);
-        aquaGameOverUI.SetActive(false);
         ps = new PlayerStatus();
         ps.ReadFromFile();
         if (ps.last_world == world + 1)
