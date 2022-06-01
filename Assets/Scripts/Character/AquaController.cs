@@ -9,6 +9,7 @@ public class AquaController : EnemyController
     public bool isPlaying;
     public bool isLeft;
     public GameObject HPUI;
+    public GameObject loseSound;
 
     [SerializeField] int attackNum;
     [SerializeField] int counter;
@@ -141,9 +142,9 @@ public class AquaController : EnemyController
         {
             isDonchan = true;
             isContiDonchan = true;
+            if (blockedTimer < Time.time + block && !isAttacking)
+                blockedTimer = Time.time + block;
         }
-        if (blockedTimer < Time.time + block && !isAttacking)
-            blockedTimer = Time.time + block;
         destoryWhenDie();
     }
 
@@ -163,6 +164,7 @@ public class AquaController : EnemyController
 
     protected override void whenDie()
     {
+        Instantiate(loseSound, Vector2.zero, Quaternion.identity);
         Destroy(HPUI);
         gameRule.pekoraWin();
         print("BOSS DEAD");

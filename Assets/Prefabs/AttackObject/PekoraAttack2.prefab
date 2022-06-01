@@ -152,3 +152,8 @@ MonoBehaviour:
   destoryByFall: 1
   from: 
   isExplosion: 0
+  explosionTime: 0
+  fallGenerateProb: 0
+  fallGenerate: {fileID: 0}
+  soundPrefab: {fileID: 1402533493462485556, guid: e3e681ba048d36e4ab400b1dc0d98e3d,
+    type: 3}

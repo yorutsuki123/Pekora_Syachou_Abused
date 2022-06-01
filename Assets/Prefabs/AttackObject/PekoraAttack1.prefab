@@ -132,3 +132,7 @@ MonoBehaviour:
   from: 
   isExplosion: 0
   explosionTime: 0
+  fallGenerateProb: 0
+  fallGenerate: {fileID: 0}
+  soundPrefab: {fileID: 4679145186111039070, guid: f33f9692b50b6874eb8ada09b8575066,
+    type: 3}

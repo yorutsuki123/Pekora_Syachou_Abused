@@ -15,12 +15,17 @@ public class AttackingController : MonoBehaviour
     public float explosionTime;
     public float fallGenerateProb;
     public GameObject fallGenerate;
+    public GameObject soundPrefab;
     float timer;
 
     // Start is called before the first frame update
     void Start()
     {
         timer = 0.0f;
+        if (soundPrefab)
+        {
+            Instantiate(soundPrefab, Vector2.zero, Quaternion.identity);
+        }
     }
 
     // Update is called once per frame

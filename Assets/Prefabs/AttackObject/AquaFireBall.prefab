@@ -4833,7 +4833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: Player
-  damage: 2
+  damage: 4
   blockTime: 0.25
   CD: 0
   destoryTime: 100
@@ -4844,6 +4844,7 @@ MonoBehaviour:
   fallGenerateProb: 1
   fallGenerate: {fileID: 7203488880195109882, guid: b533ab10ab1a089449a530525b64c1a8,
     type: 3}
+  soundPrefab: {fileID: 0}
 --- !u!50 &8357838755951264317
 Rigidbody2D:
   serializedVersion: 4
