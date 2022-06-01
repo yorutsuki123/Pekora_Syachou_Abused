@@ -24,6 +24,9 @@ public class WalkNextScene : MonoBehaviour
             return;
         GameObject.FindWithTag("MainCamera").GetComponent<GameRule>().saveStatus();
         GameObject.FindWithTag("MainCamera").GetComponent<GameRule>().isEnd = true;
-        SceneManager.LoadScene(nextScene);
+        if (nextScene == "Chapter2" && GameObject.FindWithTag("MainCamera").GetComponent<GameRule>().ps.ch2)
+            SceneManager.LoadScene("World2");
+        else
+            SceneManager.LoadScene(nextScene);
     }
 }

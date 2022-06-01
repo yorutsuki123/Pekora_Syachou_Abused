@@ -38,6 +38,10 @@ public class GameRule : MonoBehaviour
         gameOverUI.SetActive(false);
         ps = new PlayerStatus();
         ps.ReadFromFile();
+        if (world == 2)
+        {
+            ps.ch2 = true;
+        }
         if (ps.last_world == world + 1)
         {
             EndPointSpot = true;
@@ -140,6 +144,7 @@ public class PlayerStatus
     public int buff;
     public int nerf;
     public int last_world;
+    public bool ch2;
 
     public PlayerStatus()
     {
@@ -147,13 +152,14 @@ public class PlayerStatus
     }
 
 
-    public PlayerStatus(int hp, int bullet, int buff, int nerf, int last_world)
+    public PlayerStatus(int hp, int bullet, int buff, int nerf, int last_world, bool ch2)
     {
         this.hp = hp;
         this.bullet = bullet;
         this.buff = buff;
         this.nerf = nerf;
         this.last_world = last_world;
+        this.ch2 = ch2;
 
     }
     void init()
@@ -163,6 +169,7 @@ public class PlayerStatus
         buff = 0;
         nerf = 0;
         last_world = 0;
+        ch2 = false;
     }
 
     public static void createEmpty()
@@ -184,6 +191,7 @@ public class PlayerStatus
                 writer.Write(buff);
                 writer.Write(nerf);
                 writer.Write(last_world);
+                writer.Write(ch2);
             }
         }
     }
@@ -194,22 +202,30 @@ public class PlayerStatus
             Directory.CreateDirectory(path);
         if (File.Exists(fileName))
         {
-            using (var stream = File.Open(fileName, FileMode.Open))
+            try
             {
-                using (var reader = new BinaryReader(stream, Encoding.UTF8, false))
+                using (var stream = File.Open(fileName, FileMode.Open))
                 {
-                    hp = reader.ReadInt32();
-                    bullet = reader.ReadInt32();
-                    buff = reader.ReadInt32();
-                    nerf = reader.ReadInt32();
-                    last_world = reader.ReadInt32();
+                    using (var reader = new BinaryReader(stream, Encoding.UTF8, false))
+                    {
+                        hp = reader.ReadInt32();
+                        bullet = reader.ReadInt32();
+                        buff = reader.ReadInt32();
+                        nerf = reader.ReadInt32();
+                        last_world = reader.ReadInt32();
+                        ch2 = reader.ReadBoolean();
+                    }
+                }
+                if (hp == 0)
+                {
+                    init();
                 }
             }
-            if (hp == 0)
+            catch (System.Exception)
             {
                 init();
+                WriteToFile();
             }
-
         }
         else
         {
