@@ -449,6 +449,7 @@ MonoBehaviour:
   EndCG: {fileID: 21300000, guid: 40e66fd26abf45d44997e8979a486a8a, type: 3}
   TextIndex: 0
   TextSpeed: 0.05
+  WaitSecond: 2
 --- !u!114 &981133181
 MonoBehaviour:
   m_ObjectHideFlags: 0

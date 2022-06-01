@@ -18,10 +18,10 @@ public class StartButton : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("離開遊戲");  //Unity測試用
+        Debug.Log("離開遊戲");
     }
-    // Update is called once per frame
-    void Update()
+
+    public void Introduction()
     {
         
     }

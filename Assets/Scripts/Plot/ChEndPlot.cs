@@ -28,6 +28,7 @@ public class ChEndPlot : MonoBehaviour
     [Header("數值")]
     public int TextIndex;
     public float TextSpeed;
+    public float WaitSecond;
     bool TextFinished;
     bool QuickShow;
 
@@ -67,6 +68,8 @@ public class ChEndPlot : MonoBehaviour
             CG.SetActive(true);
             TextIndex = 0;
             CG.GetComponent<Image>().sprite = EndCG;
+            Input.GetKeyDown(KeyCode.Space);
+            SceneManager.LoadScene("Start");
             return;
         }*/
         StartCoroutine(End());
@@ -148,8 +151,7 @@ public class ChEndPlot : MonoBehaviour
             TextIndex = 0;
             CG.GetComponent<Image>().sprite = EndCG;
 
-            yield return new WaitForSeconds(1);
-
+            yield return new WaitForSeconds(WaitSecond);
             SceneManager.LoadScene("Start");
         }
     }
