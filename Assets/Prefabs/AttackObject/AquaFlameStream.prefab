@@ -4835,7 +4835,7 @@ MonoBehaviour:
     type: 3}
   lambda: 0.2
   atkSpeed: 0.13
-  time: 2.67
+  time: 4.67
 --- !u!1 &9032719204618125005
 GameObject:
   m_ObjectHideFlags: 0
