@@ -83,7 +83,7 @@ public class GameRule : MonoBehaviour
 
     public void backtotitle()
     {
-        SceneManager.LoadScene("MainPage");
+        SceneManager.LoadScene("Start");
     }
 
 }
@@ -121,6 +121,12 @@ public class PlayerStatus
         buff = 0;
         nerf = 0;
         last_world = 0;
+    }
+
+    public static void createEmpty()
+    {
+        PlayerStatus s = new PlayerStatus();
+        s.WriteToFile();
     }
 
     public void WriteToFile()

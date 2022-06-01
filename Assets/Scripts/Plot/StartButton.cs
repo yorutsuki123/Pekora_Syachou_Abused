@@ -7,6 +7,7 @@ public class StartButton : MonoBehaviour
 {
     public void StartGame()
     {
+        PlayerStatus.createEmpty();
         SceneManager.LoadScene("Chapter1");
     }
 
