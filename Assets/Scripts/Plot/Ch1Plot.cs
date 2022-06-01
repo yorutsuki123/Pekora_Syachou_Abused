@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Ch1Plot : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class Ch1Plot : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
         {
             gameObject.SetActive(false);
+            SceneManager.LoadScene("World1");
             TextIndex = 0;
             return;
         }
