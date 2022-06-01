@@ -34,12 +34,20 @@ public class HpHandler : MonoBehaviour
         }
         if (player != null)
         {
-            if (player.GetComponent<PlayerController>().hp >= num * 2)
-                gameObject.GetComponent<Image>().sprite = full;
-            else if (player.GetComponent<PlayerController>().hp == num * 2 - 1)
-                gameObject.GetComponent<Image>().sprite = half;
-            else
+            try
+            {
+                if (player.GetComponent<PlayerController>().hp >= num * 2)
+                    gameObject.GetComponent<Image>().sprite = full;
+                else if (player.GetComponent<PlayerController>().hp == num * 2 - 1)
+                    gameObject.GetComponent<Image>().sprite = half;
+                else
+                    gameObject.GetComponent<Image>().sprite = none;
+            }
+            catch (System.Exception)
+            {
                 gameObject.GetComponent<Image>().sprite = none;
+            }
+            
         }
     }
 }

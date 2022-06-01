@@ -34,7 +34,7 @@ public abstract class CreatureController : MonoBehaviour
 
     public virtual void getAttacked(int damage, string from, float direction, float block=0.5f, string type="Hurt")
     {
-        if (damage > hp * 10)
+        if (hp > 0 && damage > hp * 10)
         {
             print("CG attack from " + from);
         }

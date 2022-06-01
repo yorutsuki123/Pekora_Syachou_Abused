@@ -4833,7 +4833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: Player
-  damage: 1
+  damage: 2
   blockTime: 0.25
   CD: 0
   destoryTime: 100

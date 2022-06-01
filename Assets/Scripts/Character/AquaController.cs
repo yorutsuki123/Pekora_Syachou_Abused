@@ -114,7 +114,7 @@ public class AquaController : EnemyController
 
     public override void getAttacked(int damage, string from, float direction, float block = 0.5f, string type = "Hurt")
     {
-        if (damage > hp * 10)
+        if (hp > 0 && damage > hp * 10)
         {
             print("CG attack from " + from);
         }
@@ -130,8 +130,7 @@ public class AquaController : EnemyController
         }
         if (blockedTimer < Time.time + block && !isAttacking)
             blockedTimer = Time.time + block;
-        if (isAttacking)
-            destoryWhenDie();
+        destoryWhenDie();
     }
 
     protected override void animationControll()

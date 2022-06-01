@@ -22,6 +22,7 @@ public class WalkNextScene : MonoBehaviour
     {
         if (col.gameObject.tag != "Player")
             return;
+        GameObject.FindWithTag("MainCamera").GetComponent<GameRule>().saveStatus();
         GameObject.FindWithTag("MainCamera").GetComponent<GameRule>().isEnd = true;
         SceneManager.LoadScene(nextScene);
     }

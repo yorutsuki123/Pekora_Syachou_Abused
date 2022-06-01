@@ -17,6 +17,7 @@ public class PlayerController : CreatureController
     public GameObject attack3Prefab;
     public GameObject item1Prefab;
     public GameObject item2Prefab;
+    public GameRule gameRule;
 
     bool isItem1InUse;
     bool isItem2InUse;
@@ -77,10 +78,11 @@ public class PlayerController : CreatureController
 
     void getStatus()
     {
-        buff_posion = 0;
-        nerf_posion = 0;
-        bullet = 10;
-        hp = maxHp;
+        gameRule = GameObject.FindWithTag("MainCamera").GetComponent<GameRule>();
+        buff_posion = gameRule.ps.buff;
+        nerf_posion = gameRule.ps.nerf;
+        bullet = gameRule.ps.bullet;
+        hp = gameRule.ps.hp;
     }
 
     protected override void init()
@@ -152,5 +154,11 @@ public class PlayerController : CreatureController
     public float nowDonchanCD()
     {
         return Math.Max(donchanTimer - Time.time, 0);
+    }
+
+    protected override void whenDie()
+    {
+        print("PEKO DEAD");
+        gameRule.gameOver();
     }
 }

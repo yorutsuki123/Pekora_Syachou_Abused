@@ -4833,7 +4833,7 @@ MonoBehaviour:
   speed: 0.2
   attacker: {fileID: 7969582585767303867, guid: 3ec94005ac789df459753e8279405345,
     type: 3}
-  lambda: 0.2
+  lambda: 0.15
   atkSpeed: 0.13
   time: 4.67
 --- !u!1 &9032719204618125005
