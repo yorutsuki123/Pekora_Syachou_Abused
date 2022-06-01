@@ -41,7 +41,8 @@ public class Ch3Plot : MonoBehaviour
         TextFinished = true;
         Name.sprite = NameBackground;
         Dialog.sprite = DialogBackground;
-        
+        LeftPicture.sprite = LeftBackground;
+        RightPicture.sprite = RightBackground;
         StartCoroutine(SetTextUI());
     }
 

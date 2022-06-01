@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b2c92421463fc40bfc6a3508cb351a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextFile: {fileID: 0}
+  TextFile: {fileID: 4900000, guid: 1e7c060f5d3d3bf4da759f609cb2a677, type: 3}
   TextName: {fileID: 262516114}
   TextLabel: {fileID: 1627619916}
   LeftPicture: {fileID: 984531136}
