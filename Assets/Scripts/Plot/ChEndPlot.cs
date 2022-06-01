@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
-public class Ch2Plot : MonoBehaviour
+public class ChEndPlot : MonoBehaviour
 {
     
     [Header("文本文件")]
@@ -15,6 +14,7 @@ public class Ch2Plot : MonoBehaviour
     public Text TextLabel;
     public Image LeftPicture,RightPicture;
     public Image Name,Dialog;
+    public GameObject CG;
 
     [Header("圖片")]
     public Sprite NameBackground;
@@ -22,6 +22,7 @@ public class Ch2Plot : MonoBehaviour
     public Sprite LeftBright,RightBright;
     public Sprite LeftDark,RightDark;
     public Sprite LeftBackground,RightBackground;
+    public Sprite HCG;
 
     [Header("數值")]
     public int TextIndex;
@@ -41,7 +42,7 @@ public class Ch2Plot : MonoBehaviour
         TextFinished = true;
         Name.sprite = NameBackground;
         Dialog.sprite = DialogBackground;
-        
+        CG.SetActive(false);
         StartCoroutine(SetTextUI());
     }
 
@@ -49,8 +50,8 @@ public class Ch2Plot : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
         {
-            gameObject.SetActive(false);
-            SceneManager.LoadScene("World2");
+            CG.SetActive(true);
+            CG.GetComponent<Image>().sprite = HCG;
             TextIndex = 0;
             return;
         }
@@ -95,11 +96,11 @@ public class Ch2Plot : MonoBehaviour
             TextIndex++;
         }
 
-        if (TextList[TextIndex][0] == 'M')
+        if (TextList[TextIndex][0] == 'A')
         {
             LeftPicture.sprite = LeftDark;
             RightPicture.sprite = RightBright;
-            TextName.text = "Miko";
+            TextName.text = "Aqua";
             TextIndex++;
         }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Ch3Plot : MonoBehaviour
 {
@@ -40,8 +41,7 @@ public class Ch3Plot : MonoBehaviour
         TextFinished = true;
         Name.sprite = NameBackground;
         Dialog.sprite = DialogBackground;
-        LeftPicture.sprite = LeftBackground;
-        RightPicture.sprite = RightBackground;
+        
         StartCoroutine(SetTextUI());
     }
 
@@ -50,6 +50,7 @@ public class Ch3Plot : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
         {
             gameObject.SetActive(false);
+            SceneManager.LoadScene("World3");
             TextIndex = 0;
             return;
         }
