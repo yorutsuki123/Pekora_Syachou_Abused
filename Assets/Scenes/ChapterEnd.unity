@@ -442,8 +442,8 @@ MonoBehaviour:
   DialogBackground: {fileID: 21300000, guid: 46922b40183995d4d9fe4a3f3cff73ff, type: 3}
   LeftBright: {fileID: 21300000, guid: 7e6819edc6ab7c94a8d54ca987ceb774, type: 3}
   RightBright: {fileID: 21300000, guid: b77636b7e9f5a084ea8ab0b73dc5acd1, type: 3}
-  LeftDark: {fileID: 21300000, guid: f94cbdd955bdcff4aa467e4ed83b3508, type: 3}
-  RightDark: {fileID: 21300000, guid: b0b854ef4d4f81941a3994ecde038f3f, type: 3}
+  LeftDark: {fileID: 21300000, guid: c404dbefa909f9b4d986746a2d8c181d, type: 3}
+  RightDark: {fileID: 21300000, guid: 52fc549abbb06e742b0be0899003d44c, type: 3}
   LeftBackground: {fileID: 21300000, guid: f94cbdd955bdcff4aa467e4ed83b3508, type: 3}
   RightBackground: {fileID: 21300000, guid: b0b854ef4d4f81941a3994ecde038f3f, type: 3}
   EndCG: {fileID: 21300000, guid: 40e66fd26abf45d44997e8979a486a8a, type: 3}

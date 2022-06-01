@@ -858,10 +858,10 @@ MonoBehaviour:
   Dialog: {fileID: 1118319625}
   NameBackground: {fileID: 21300000, guid: 46922b40183995d4d9fe4a3f3cff73ff, type: 3}
   DialogBackground: {fileID: 21300000, guid: 46922b40183995d4d9fe4a3f3cff73ff, type: 3}
-  LeftBright: {fileID: 0}
-  RightBright: {fileID: 0}
-  LeftDark: {fileID: 0}
-  RightDark: {fileID: 0}
+  LeftBright: {fileID: 21300000, guid: 7e6819edc6ab7c94a8d54ca987ceb774, type: 3}
+  RightBright: {fileID: 21300000, guid: 46cef2ec8484e1e48aaeeefab977b647, type: 3}
+  LeftDark: {fileID: 21300000, guid: c404dbefa909f9b4d986746a2d8c181d, type: 3}
+  RightDark: {fileID: 21300000, guid: 4c3435ff2ae2db04fbd0588d0a62c713, type: 3}
   LeftBackground: {fileID: 21300000, guid: ed9f3056e9d49d8488411ee0bbb78caa, type: 3}
   RightBackground: {fileID: 21300000, guid: deb099333bbc9524392036bbbb88eb3c, type: 3}
   TextIndex: 0

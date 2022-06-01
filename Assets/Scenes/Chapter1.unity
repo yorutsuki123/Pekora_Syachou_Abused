@@ -491,10 +491,10 @@ MonoBehaviour:
   Dialog: {fileID: 808915659}
   NameBackground: {fileID: 21300000, guid: 46922b40183995d4d9fe4a3f3cff73ff, type: 3}
   DialogBackground: {fileID: 21300000, guid: 46922b40183995d4d9fe4a3f3cff73ff, type: 3}
-  LeftBright: {fileID: 0}
-  RightBright: {fileID: 0}
-  LeftDark: {fileID: 0}
-  RightDark: {fileID: 0}
+  LeftBright: {fileID: 21300000, guid: 7e6819edc6ab7c94a8d54ca987ceb774, type: 3}
+  RightBright: {fileID: 21300000, guid: 6fcde706af285f54bb9202e19d481a3c, type: 3}
+  LeftDark: {fileID: 21300000, guid: c404dbefa909f9b4d986746a2d8c181d, type: 3}
+  RightDark: {fileID: 21300000, guid: 144c98eea7508db48848f2ece497328c, type: 3}
   LeftBackground: {fileID: 21300000, guid: 68c690379faba074b835c06dcdeb87fb, type: 3}
   RightBackground: {fileID: 21300000, guid: 6f682e170d7fb5545bbd212f6206503a, type: 3}
   TextIndex: 0
