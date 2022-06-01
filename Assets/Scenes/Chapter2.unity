@@ -661,7 +661,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 64
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -767,7 +767,6 @@ GameObject:
   - component: {fileID: 1961238755}
   - component: {fileID: 1961238754}
   - component: {fileID: 1961238756}
-  - component: {fileID: 1961238757}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -857,45 +856,16 @@ MonoBehaviour:
   RightPicture: {fileID: 628831034}
   Name: {fileID: 723899437}
   Dialog: {fileID: 1118319625}
-  NameBackground: {fileID: 0}
-  DialogBackground: {fileID: 0}
+  NameBackground: {fileID: 21300000, guid: 46922b40183995d4d9fe4a3f3cff73ff, type: 3}
+  DialogBackground: {fileID: 21300000, guid: 46922b40183995d4d9fe4a3f3cff73ff, type: 3}
   LeftBright: {fileID: 0}
   RightBright: {fileID: 0}
   LeftDark: {fileID: 0}
   RightDark: {fileID: 0}
-  LeftBackground: {fileID: 0}
-  RightBackground: {fileID: 0}
+  LeftBackground: {fileID: 21300000, guid: ed9f3056e9d49d8488411ee0bbb78caa, type: 3}
+  RightBackground: {fileID: 21300000, guid: deb099333bbc9524392036bbbb88eb3c, type: 3}
   TextIndex: 0
-  TextSpeed: 0
---- !u!114 &1961238757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961238752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bc672eae04f6fb468770399acd19936, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextFile: {fileID: 0}
-  TextName: {fileID: 0}
-  TextLabel: {fileID: 0}
-  LeftPicture: {fileID: 0}
-  RightPicture: {fileID: 0}
-  Name: {fileID: 0}
-  Dialog: {fileID: 0}
-  NameBackground: {fileID: 0}
-  DialogBackground: {fileID: 0}
-  LeftBright: {fileID: 0}
-  RightBright: {fileID: 0}
-  LeftDark: {fileID: 0}
-  RightDark: {fileID: 0}
-  LeftBackground: {fileID: 0}
-  RightBackground: {fileID: 0}
-  TextIndex: 0
-  TextSpeed: 0
+  TextSpeed: 0.05
 --- !u!1 &2045736412
 GameObject:
   m_ObjectHideFlags: 0
