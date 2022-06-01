@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ChEndPlot : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class ChEndPlot : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
+        /*if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
         {
             TextFinished = true;
             TextName.SetActive(false);
@@ -64,10 +65,11 @@ public class ChEndPlot : MonoBehaviour
             Name.SetActive(false);
             Dialog.SetActive(false);
             CG.SetActive(true);
-            CG.GetComponent<Image>().sprite = EndCG;
             TextIndex = 0;
+            CG.GetComponent<Image>().sprite = EndCG;
             return;
-        }
+        }*/
+        StartCoroutine(End());
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
@@ -129,5 +131,26 @@ public class ChEndPlot : MonoBehaviour
         QuickShow = false;
         TextFinished = true;
         TextIndex++;
+    }
+
+    IEnumerator End()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
+        {
+            TextFinished = true;
+            TextName.SetActive(false);
+            TextLabel.SetActive(false);
+            LeftPicture.SetActive(false);
+            RightPicture.SetActive(false);
+            Name.SetActive(false);
+            Dialog.SetActive(false);
+            CG.SetActive(true);
+            TextIndex = 0;
+            CG.GetComponent<Image>().sprite = EndCG;
+
+            yield return new WaitForSeconds(1);
+
+            SceneManager.LoadScene("Start");
+        }
     }
 }
