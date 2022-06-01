@@ -8,6 +8,7 @@ public class AquaController : EnemyController
     public GameObject attack3Prefab;
     public bool isPlaying;
     public bool isLeft;
+    public GameObject HPUI;
 
     [SerializeField] int attackNum;
     [SerializeField] int counter;
@@ -149,6 +150,7 @@ public class AquaController : EnemyController
 
     protected override void whenDie()
     {
+        Destroy(HPUI);
         print("BOSS DEAD");
     }
 
