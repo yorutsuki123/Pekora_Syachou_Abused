@@ -75126,7 +75126,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.6745098, g: 0.87058824, b: 0.972549, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -75208,8 +75208,8 @@ MonoBehaviour:
   - {fileID: 2877684328959468972, guid: 3a4ce47def4396a4d948e1b2eb8ade51, type: 3}
   - {fileID: 1171902270713839424, guid: 6798e1394adb60342953975d36568dd2, type: 3}
   dropProb:
-  - 0.4
-  - 0.4
+  - 0.3
+  - 0.5
   - 0.1
   - 0.1
   EndPointSpot: 0
