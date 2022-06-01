@@ -10,10 +10,10 @@ public class ChEndPlot : MonoBehaviour
     public TextAsset TextFile;
 
     [Header("UI組件")]
-    public Text TextName;
-    public Text TextLabel;
-    public Image LeftPicture,RightPicture;
-    public Image Name,Dialog;
+    public GameObject TextName;
+    public GameObject TextLabel;
+    public GameObject LeftPicture,RightPicture;
+    public GameObject Name,Dialog;
     public GameObject CG;
 
     [Header("圖片")]
@@ -22,7 +22,7 @@ public class ChEndPlot : MonoBehaviour
     public Sprite LeftBright,RightBright;
     public Sprite LeftDark,RightDark;
     public Sprite LeftBackground,RightBackground;
-    public Sprite HCG;
+    public Sprite EndCG;
 
     [Header("數值")]
     public int TextIndex;
@@ -40,9 +40,15 @@ public class ChEndPlot : MonoBehaviour
     private void OnEnable()
     {
         TextFinished = true;
-        Name.sprite = NameBackground;
-        Dialog.sprite = DialogBackground;
+        TextName.SetActive(true);
+        TextLabel.SetActive(true);
+        LeftPicture.SetActive(true);
+        RightPicture.SetActive(true);
+        Name.SetActive(true);
+        Dialog.SetActive(true);
         CG.SetActive(false);
+        Name.GetComponent<Image>().sprite = NameBackground;
+        Dialog.GetComponent<Image>().sprite = DialogBackground;
         StartCoroutine(SetTextUI());
     }
 
@@ -50,8 +56,15 @@ public class ChEndPlot : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
         {
+            TextFinished = true;
+            TextName.SetActive(false);
+            TextLabel.SetActive(false);
+            LeftPicture.SetActive(false);
+            RightPicture.SetActive(false);
+            Name.SetActive(false);
+            Dialog.SetActive(false);
             CG.SetActive(true);
-            CG.GetComponent<Image>().sprite = HCG;
+            CG.GetComponent<Image>().sprite = EndCG;
             TextIndex = 0;
             return;
         }
@@ -86,33 +99,33 @@ public class ChEndPlot : MonoBehaviour
     IEnumerator SetTextUI()
     {
         TextFinished = false;
-        TextLabel.text = "";
+        TextLabel.GetComponent<Text>().text = "";
 
         if (TextList[TextIndex][0] == 'P')
         {
-            LeftPicture.sprite = LeftBright;
-            RightPicture.sprite = RightDark;
-            TextName.text = "Pekora";
+            LeftPicture.GetComponent<Image>().sprite = LeftBright;
+            RightPicture.GetComponent<Image>().sprite = RightDark;
+            TextName.GetComponent<Text>().text = "Pekora";
             TextIndex++;
         }
 
         if (TextList[TextIndex][0] == 'A')
         {
-            LeftPicture.sprite = LeftDark;
-            RightPicture.sprite = RightBright;
-            TextName.text = "Aqua";
+            LeftPicture.GetComponent<Image>().sprite = LeftDark;
+            RightPicture.GetComponent<Image>().sprite = RightBright;
+            TextName.GetComponent<Text>().text = "Aqua";
             TextIndex++;
         }
 
         int Letter = 0;
         while (!QuickShow && Letter < TextList[TextIndex].Length -1)
         {
-            TextLabel.text += TextList[TextIndex][Letter];
+            TextLabel.GetComponent<Text>().text += TextList[TextIndex][Letter];
             Letter++;
             yield return new WaitForSeconds(TextSpeed);
         }
 
-        TextLabel.text = TextList[TextIndex];
+        TextLabel.GetComponent<Text>().text = TextList[TextIndex];
         QuickShow = false;
         TextFinished = true;
         TextIndex++;

@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 7}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &46301285
@@ -328,7 +328,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 981133179}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -403,10 +403,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1464440718}
+  - {fileID: 2069275755}
   - {fileID: 1359921888}
   - {fileID: 960951194}
-  - {fileID: 2069275755}
-  - {fileID: 1464440718}
   - {fileID: 1036406975}
   - {fileID: 1977022098}
   - {fileID: 46301284}
@@ -431,22 +431,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextFile: {fileID: 0}
-  TextName: {fileID: 1036406976}
-  TextLabel: {fileID: 1977022099}
-  LeftPicture: {fileID: 1464440719}
-  RightPicture: {fileID: 2069275756}
-  Name: {fileID: 1359921889}
-  Dialog: {fileID: 960951195}
+  TextName: {fileID: 1036406974}
+  TextLabel: {fileID: 1977022097}
+  LeftPicture: {fileID: 1464440717}
+  RightPicture: {fileID: 2069275754}
+  Name: {fileID: 1359921887}
+  Dialog: {fileID: 960951193}
   CG: {fileID: 46301283}
-  NameBackground: {fileID: 0}
-  DialogBackground: {fileID: 0}
-  LeftBright: {fileID: 0}
-  RightBright: {fileID: 0}
-  LeftDark: {fileID: 0}
-  RightDark: {fileID: 0}
-  LeftBackground: {fileID: 0}
-  RightBackground: {fileID: 0}
-  HCG: {fileID: 0}
+  NameBackground: {fileID: 21300000, guid: 46922b40183995d4d9fe4a3f3cff73ff, type: 3}
+  DialogBackground: {fileID: 21300000, guid: 46922b40183995d4d9fe4a3f3cff73ff, type: 3}
+  LeftBright: {fileID: 21300000, guid: 7e6819edc6ab7c94a8d54ca987ceb774, type: 3}
+  RightBright: {fileID: 21300000, guid: b77636b7e9f5a084ea8ab0b73dc5acd1, type: 3}
+  LeftDark: {fileID: 21300000, guid: f94cbdd955bdcff4aa467e4ed83b3508, type: 3}
+  RightDark: {fileID: 21300000, guid: b0b854ef4d4f81941a3994ecde038f3f, type: 3}
+  LeftBackground: {fileID: 21300000, guid: f94cbdd955bdcff4aa467e4ed83b3508, type: 3}
+  RightBackground: {fileID: 21300000, guid: b0b854ef4d4f81941a3994ecde038f3f, type: 3}
+  EndCG: {fileID: 21300000, guid: 40e66fd26abf45d44997e8979a486a8a, type: 3}
   TextIndex: 0
   TextSpeed: 0.05
 --- !u!114 &981133181
@@ -596,7 +596,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 981133179}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -671,7 +671,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 981133179}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -974,7 +974,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 981133179}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
