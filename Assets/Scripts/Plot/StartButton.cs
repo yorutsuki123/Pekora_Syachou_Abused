@@ -13,6 +13,7 @@ public class StartButton : MonoBehaviour
     private void Start()
     {
         noIntroduction();
+        Application.targetFrameRate = 60;
     }
 
     public void StartGame()
