@@ -18,6 +18,7 @@ public class AquaController : EnemyController
 
     protected override void FixedUpdate()
     {
+        
         try
         {
             if (gameRule == null)
@@ -29,11 +30,11 @@ public class AquaController : EnemyController
         {
 
         }
-        
         if (player == null)
             player = GameObject.FindWithTag("Player");
         if (player != null)
             target = player.transform.position;
+        showDonchan();
         checkGround();
         attackControll();
         animationControll();

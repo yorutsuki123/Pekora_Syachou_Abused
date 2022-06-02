@@ -22,6 +22,7 @@ public class GameRule : MonoBehaviour
     public GameObject youwinUI;
     public GameObject pekoGameOverUI;
     public GameObject aquaGameOverUI;
+    public GameObject pauseUIObj;
     public bool PekoCG;
     public bool AquaCG;
 
@@ -90,6 +91,7 @@ public class GameRule : MonoBehaviour
 
     public void gameOver()
     {
+        pauseUIObj.SetActive(false);
         if (world == 3)
             pekoGameOverUI.SetActive(false);
         isEnd = true;
@@ -100,12 +102,14 @@ public class GameRule : MonoBehaviour
 
     public void pekoGameOver()
     {
+        pauseUIObj.SetActive(false);
         isEnd = true;
         pekoGameOverUI.SetActive(true);
     }
 
     public void pekoraWin()
     {
+        pauseUIObj.SetActive(false);
         isEnd = true;
         youwinUI.SetActive(true);
     }

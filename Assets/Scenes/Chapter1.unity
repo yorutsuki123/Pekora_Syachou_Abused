@@ -634,6 +634,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208764252}
   m_CullTransparentMesh: 1
+--- !u!1001 &420624494
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 912.5351
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 489.34607
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -485.05408
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590341, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7217704299527590395, guid: 220566a7030c9e045b216a7f251b7adb,
+        type: 3}
+      propertyPath: m_Name
+      value: PauseController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 220566a7030c9e045b216a7f251b7adb, type: 3}
 --- !u!1 &778036532
 GameObject:
   m_ObjectHideFlags: 0

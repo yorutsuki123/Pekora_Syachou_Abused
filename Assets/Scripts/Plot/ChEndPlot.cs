@@ -56,6 +56,8 @@ public class ChEndPlot : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+            return;
         /*if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
         {
             TextFinished = true;

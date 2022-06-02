@@ -11,6 +11,7 @@ public abstract class EnemyController : CreatureController
     public float trackDistX;
     public float trackDistY;
     public GameObject attackPrefab;
+    public GameObject Donchan;
 
     [SerializeField] protected bool isDonchan;
     [SerializeField] protected bool isContiDonchan;
@@ -35,6 +36,7 @@ public abstract class EnemyController : CreatureController
 
     protected virtual void FixedUpdate()
     {
+        showDonchan();
         if (player == null)
             player = GameObject.FindWithTag("Player");
         if (player != null)
@@ -56,6 +58,12 @@ public abstract class EnemyController : CreatureController
         isAttack = false;
         attackTimer = 0;
     }
+
+    protected void showDonchan()
+    {
+        Donchan.SetActive(isContiDonchan);
+    }
+
 
     protected virtual void attackControll()
     {

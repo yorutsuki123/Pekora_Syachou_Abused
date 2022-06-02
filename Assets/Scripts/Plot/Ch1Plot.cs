@@ -48,6 +48,8 @@ public class Ch1Plot : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+            return;
         if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
         {
             gameObject.SetActive(false);

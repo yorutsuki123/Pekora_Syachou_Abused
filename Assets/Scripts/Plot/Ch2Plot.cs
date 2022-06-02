@@ -47,7 +47,9 @@ public class Ch2Plot : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
+        if (Time.timeScale == 0)
+            return;
+        if (Input.GetKeyDown(KeyCode.Space) && TextIndex == TextList.Count)
         {
             gameObject.SetActive(false);
             SceneManager.LoadScene("World2");
