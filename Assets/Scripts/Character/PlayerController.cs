@@ -36,53 +36,58 @@ public class PlayerController : CreatureController
 
     void FixedUpdate()
     {
-        try
-        {
-            if (gameRule == null)
-                gameRule = GameObject.FindWithTag("MainCamera").GetComponent<GameRule>();
-            else if (gameRule.isEnd)
-                return;
-        }
-        catch (System.Exception)
-        {
-
-        }
-        if (Input.GetAxisRaw("Item1") > 0)
-        {
-            if (!isItem1InUse)
-            {
-                if (buff_posion > 0)
-                {
-                    Instantiate(item1Prefab, new Vector3(), Quaternion.Euler(new Vector3()));
-                    buff_posion--;
-                }
-            }
-            isItem1InUse = true;
-        }
-        else
-        {
-            isItem1InUse = false;
-        }
-        if(Input.GetAxisRaw("Item2") > 0)
-        {
-            if (!isItem2InUse)
-            {
-                if (nerf_posion > 0)
-                {
-                    Instantiate(item2Prefab, new Vector3(), Quaternion.Euler(new Vector3()));
-                    nerf_posion--;
-                }
-            }
-            isItem2InUse = true;
-        }
-        else
-        {
-            isItem2InUse = false;
-        }
-
+        float h = 0, v = 0;
         checkGround();
-        movingControll(isAttacking ? 0 : Input.GetAxisRaw("Horizontal"));
-        jumpingControll(isAttacking ? 0 : Input.GetAxisRaw("Vertical"));
+        if (hp > 0)
+        {
+            try
+            {
+                if (gameRule == null)
+                    gameRule = GameObject.FindWithTag("MainCamera").GetComponent<GameRule>();
+                else if (gameRule.isEnd)
+                    return;
+            }
+            catch (System.Exception)
+            {
+
+            }
+            if (Input.GetAxisRaw("Item1") > 0)
+            {
+                if (!isItem1InUse)
+                {
+                    if (buff_posion > 0)
+                    {
+                        Instantiate(item1Prefab, new Vector3(), Quaternion.Euler(new Vector3()));
+                        buff_posion--;
+                    }
+                }
+                isItem1InUse = true;
+            }
+            else
+            {
+                isItem1InUse = false;
+            }
+            if (Input.GetAxisRaw("Item2") > 0)
+            {
+                if (!isItem2InUse)
+                {
+                    if (nerf_posion > 0)
+                    {
+                        Instantiate(item2Prefab, new Vector3(), Quaternion.Euler(new Vector3()));
+                        nerf_posion--;
+                    }
+                }
+                isItem2InUse = true;
+            }
+            else
+            {
+                isItem2InUse = false;
+            }
+            h = isAttacking ? 0 : Input.GetAxisRaw("Horizontal");
+            v = isAttacking ? 0 : Input.GetAxisRaw("Vertical");
+        }
+        movingControll(h);
+        jumpingControll(v);
         animationControll();
 
     }
