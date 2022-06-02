@@ -3,6 +3,7 @@ FCUGDC GameJam 1102
  * 遊戲平台: PC
  * 遊戲人數: 1
  * 遊戲方式: 2D冒險
+ * 下載連結：[download](https://https://github.com/yorutsuki123/Pekora_Syachou_Abused/releases)
 
 ## 世界觀
 在Hololive麥塊服中，兔田建設社長Pekora被Moona反應倉庫裡沒有羊毛了，養的羊也不知為何都不見了，準備出門去抓羊，卻發現...
